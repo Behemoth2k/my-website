@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lễ Quốc Khánh 02/09/1945 - FPT Schools Project</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Merriweather', serif;
+            color: #2b2b2b;
+            background-color: #fdfbf7;
+            background-image: radial-gradient(#e5d9c5 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .logo, .nav-links a, .quiz-option, .quiz-btn, .share-btn, .stat-number, .ref-link {
+            font-family: 'Montserrat', sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+        /* Styling cho inline wiki links */
+        .wiki-link {
+            color: #da251d;
+            font-weight: 600;
+            border-bottom: 1px dotted #da251d;
+            transition: all 0.2s ease;
+        }
+        .wiki-link:hover {
+            color: #f36f21;
+            border-bottom-style: solid;
+            background-color: rgba(243, 111, 33, 0.08);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #f36f21;
+        }
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .fpt-logo {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            border-left: 2px solid #e0e0e0;
+            padding-left: 10px;
+        }
+        .school-name {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #f36f21;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+        .sub-title {
+            font-size: 0.75rem;
+            color: #666;
+            font-weight: 600;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        .nav-links a {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #4a4a4a;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #f36f21;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #f36f21;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --- HERO SECTION DECORATION --- */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(186, 24, 27, 0.92), rgba(102, 7, 8, 0.95)), 
+                        url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: #ffffff;
+            text-align: center;
+            padding: 120px 20px 100px;
+            overflow: hidden;
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
+        }
+        .hero::before {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 25rem;
+            color: rgba(255, 205, 0, 0.05);
+            pointer-events: none;
+            user-select: none;
+        }
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-badge {
+            background: linear-gradient(45deg, #ffcd00, #ffaa00);
+            color: #8b0000;
+            font-weight: 800;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 205, 0, 0.4);
+            letter-spacing: 1px;
+            animation: pulse-glow 2s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 205, 0, 0.4); }
+            100% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 205, 0, 0.8); }
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.25;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+            background: linear-gradient(to right, #ffffff, #ffe3d5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 35px;
+            font-style: italic;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        }
+        .btn {
+            background: linear-gradient(45deg, #f36f21, #ff8c42);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 30px;
+            box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(243, 111, 33, 0.6);
+            background: linear-gradient(45deg, #ff8c42, #f36f21);
+        }
+
+        /* --- MAIN CONTAINER --- */
+        .container {
+            max-width: 1050px;
+            margin: 70px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #8b0000;
+            margin-bottom: 45px;
+            position: relative;
+            font-weight: 800;
+        }
+        .section-title::after {
+            content: '❖';
+            font-size: 1.2rem;
+            color: #f36f21;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* --- STATS SECTION DECORATION --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+        .stat-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(243, 111, 33, 0.15);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, #f36f21, #da251d);
+        }
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(243, 111, 33, 0.15);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #da251d;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* --- INTRO & QUOTE DECORATION --- */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        .intro-text p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+        .img-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease;
+        }
+        .img-card:hover {
+            transform: scale(1.02);
+        }
+        .img-caption {
+            padding: 12px 18px;
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+            font-style: italic;
+            background: #ffffff;
+            border-top: 1px solid #eee;
+        }
+        .quote-card {
+            background: linear-gradient(135deg, #ffffff, #fff8f5);
+            border-left: 6px solid #f36f21;
+            padding: 30px;
+            border-radius: 0 16px 16px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            margin-top: 25px;
+            position: relative;
+        }
+        .quote-card::before {
+            content: '“';
+            font-size: 5rem;
+            color: rgba(243, 111, 33, 0.15);
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-family: sans-serif;
+        }
+        .quote-card blockquote {
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .quote-card .author {
+            font-weight: 700;
+            color: #f36f21;
+            text-align: right;
+        }
+
+        /* --- TIMELINE DECORATION & ANIMATION --- */
+        .timeline {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto 80px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #f36f21, #da251d, #f36f21);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            padding: 20px 35px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transition: all 0.6s ease-out;
+        }
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+            transform: translateX(-50px);
+        }
+        .timeline-item.right {
+            left: 50%;
+            transform: translateX(50px);
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .timeline-item::after {
+            content: '★';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: #da251d;
+            color: #ffcd00;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 10px rgba(218, 37, 29, 0.6);
+        }
+        .timeline-item.right::after {
+            left: -12px;
+        }
+        .content-box {
+            padding: 22px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border-top: 3px solid #f36f21;
+            transition: transform 0.3s;
+        }
+        .content-box:hover {
+            transform: translateY(-3px);
+        }
+        .content-box h3 {
+            color: #da251d;
+            margin-bottom: 6px;
+            font-size: 1.15rem;
+        }
+
+        /* --- CARDS GRID DECORATION --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 5px solid #f36f21;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(243, 111, 33, 0.15);
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            display: inline-block;
+            background: #fff8f5;
+            padding: 12px;
+            border-radius: 12px;
+        }
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        /* --- QUIZ SECTION DECORATION --- */
+        .quiz-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 45px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+            border: 1px solid rgba(243, 111, 33, 0.2);
+            position: relative;
+            margin-bottom: 80px;
+        }
+        .quiz-card {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .quiz-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .quiz-question {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #8b0000;
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .quiz-option {
+            position: relative;
+            overflow: hidden;
+            background-color: #fcfcfc;
+            border: 2px solid #eaeaea;
+            padding: 16px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            text-align: left;
+            outline: none;
+            user-select: none;
+        }
+        .quiz-option:hover:not(:disabled) {
+            border-color: #f36f21;
+            background-color: #fff8f5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(243, 111, 33, 0.15);
+        }
+
+        /* Ripple Effect */
+        .quiz-option .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(243, 111, 33, 0.3);
+            transform: scale(0);
+            animation: ripple-effect 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple-effect {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        /* Đúng / Sai Animations */
+        .quiz-option.correct {
+            background-color: #d4edda !important;
+            border-color: #28a745 !important;
+            color: #155724;
+            animation: bounce-correct 0.5s ease forwards;
+            box-shadow: 0 0 15px rgba(40, 167, 69, 0.3);
+        }
+        .quiz-option.incorrect {
+            background-color: #f8d7da !important;
+            border-color: #dc3545 !important;
+            color: #721c24;
+            animation: shake-incorrect 0.4s ease forwards;
+            box-shadow: 0 0 15px rgba(220, 53, 69, 0.3);
+        }
+        .quiz-option.dimmed {
+            opacity: 0.45;
+            transform: scale(0.98);
+        }
+
+        @keyframes bounce-correct {
+            0% { transform: scale(1); }
+            30% { transform: scale(1.05); }
+            50% { transform: scale(0.98); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shake-incorrect {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+        }
+
+        .feedback-text {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .quiz-result-box {
+            display: none;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #fff8f5);
+            border: 2px dashed #f36f21;
+            padding: 35px;
+            border-radius: 16px;
+            margin-top: 30px;
+            animation: popUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(243, 111, 33, 0.15);
+        }
+        @keyframes popUp {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .quiz-result-box h3 {
+            color: #8b0000;
+            margin-bottom: 12px;
+            font-size: 1.6rem;
+        }
+        .share-btn {
+            padding: 14px 28px;
+            border-radius: 30px;
+            border: none;
+            color: white;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: linear-gradient(45deg, #333, #555);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 15px;
+        }
+        .share-btn:hover {
+            background: linear-gradient(45deg, #f36f21, #ff8c42);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
+        }
+
+        /* --- REFERENCES SECTION --- */
+        .references-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            border-left: 5px solid #da251d;
+        }
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .ref-card {
+            background: #fdfbf7;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        .ref-card:hover {
+            border-color: #f36f21;
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .ref-badge {
+            background: #da251d;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        .ref-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .ref-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #2b2b2b;
+            margin-bottom: 2px;
+        }
+        .ref-source {
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* --- FOOTER DECORATION --- */
+        footer {
+            background: #181818;
+            color: #a0a0a0;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 100px;
+            font-size: 0.9rem;
+            border-top: 4px solid #f36f21;
+        }
+        footer p { margin-bottom: 6px; }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .intro-grid { grid-template-columns: 1fr; }
+            .quiz-options { grid-template-columns: 1fr; }
+            
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
+            .timeline-item.left { text-align: left; }
+            .timeline-item.right { left: 0; }
+            .timeline-item.left::after, .timeline-item.right::after { left: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="brand">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/FPT_logo_2010.svg" alt="Logo FPT" class="fpt-logo">
+                <div class="logo-text">
+                    <span class="school-name">FPT SCHOOLS</span>
+                    <span class="sub-title">Dự Án Lịch Sử 02/09</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#con-so">Con Số</a></li>
+                <li><a href="#gioi-thieu">Giới Thiệu</a></li>
+                <li><a href="#dien-bien">Mốc Lịch Sử</a></li>
+                <li><a href="#y-nghia">Ý Nghĩa</a></li>
+                <li><a href="#trac-nghiem">Thử Thách</a></li>
+                <li><a href="#tai-lieu">Tài Liệu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Mốc Son Lịch Sử</span>
+            <h1>NGÀY QUỐC KHÁNH NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h1>
+            <p>"Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do độc lập."</p>
+            <a href="#gioi-thieu" class="btn">Khám Phá Lịch Sử</a>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Thống kê con số lịch sử -->
+        <section id="con-so">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="500000">0</div>
+                    <div class="stat-label">Quần chúng nhân dân hội tụ tại Ba Đình</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">14:00</div>
+                    <div class="stat-label">Thời điểm diễn ra Lễ Độc Lập lịch sử</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="80">0</div>
+                    <div class="stat-label">Năm ách thống trị thực dân bị xóa bỏ</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Giới thiệu & Bối cảnh -->
+        <section id="gioi-thieu">
+            <h2 class="section-title">Bối Cảnh Lịch Sử Trong & Ngoài Nước</h2>
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <p>Tháng 8 năm 1945, tình hình thế giới biến động nhanh chóng khi <a href="https://vi.wikipedia.org/wiki/Thế_chiến_thứ_hai" target="_blank" class="wiki-link">Thế chiến II</a> bước vào giai đoạn kết thúc. Phát xít Nhật tuyên bố đầu hàng vô điều kiện. Nắm bắt thời cơ ngàn năm có một, dưới sự lãnh đạo của Đảng và Chủ tịch <a href="https://vi.wikipedia.org/wiki/Hồ_Chí_Minh" target="_blank" class="wiki-link">Hồ Chí Minh</a>, nhân dân Việt Nam đã tiến hành <a href="https://vi.wikipedia.org/wiki/Cách_mạng_Tháng_Tám" target="_blank" class="wiki-link">Tổng khởi nghĩa Cách mạng Tháng Tám</a> thành công rực rỡ.</p>
+                    <p>Ngày <strong>02 tháng 9 năm 1945</strong>, tại <a href="https://vi.wikipedia.org/wiki/Quảng_trường_Ba_Đình" target="_blank" class="wiki-link">Quảng trường Ba Đình</a> (Hà Nội), Chủ tịch Hồ Chí Minh đã thay mặt Chính phủ lâm thời đọc bản <a href="https://vi.wikipedia.org/wiki/Tuyên_ngôn_độc_lập_nước_Việt_Nam_Dân_chủ_Cộng_hòa" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, đập tan hơn 80 năm ách đô hộ của thực dân Pháp và chế độ phong kiến.</p>
+                    <div class="quote-card">
+                        <blockquote>
+                            "Tất cả mọi người sinh ra đều có quyền bình đẳng. Tạo hóa cho họ những quyền không ai có thể xâm phạm được; trong những quyền ấy, có quyền được sống, quyền tự do và quyền mưu cầu hạnh phúc."
+                        </blockquote>
+                        <div class="author">— Trích Tuyên ngôn Độc lập (02/09/1945)</div>
+                    </div>
+                </div>
+                <div class="img-card">
+                    <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Quảng trường Ba Đình 02/09/1945">
+                    <div class="img-caption">Lễ đài Quảng trường Ba Đình tràn ngập cờ đỏ sao vàng ngày 02/09/1945.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diễn biến timeline -->
+        <section id="dien-bien">
+            <h2 class="section-title">Các Mốc Lịch Sử Trọng Đại 1945</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="content-box">
+                        <h3>19/08/1945</h3>
+                        <p><strong>Khởi nghĩa giành chính quyền tại Hà Nội:</strong> Hàng vạn quần chúng chiếm Bắc Bộ Phủ, Phủ Khâm sai, đánh dấu thắng lợi quyết định của <a href="https://vi.wikipedia.org/wiki/Cách_mạng_Tháng_Tám" target="_blank" class="wiki-link">Cách mạng Tháng Tám</a>.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content-box">
+                        <h3>25/08/1945</h3>
+                        <p><strong>Chủ tịch Hồ Chí Minh về Hà Nội:</strong> Bác đến ở tại <a href="https://vi.wikipedia.org/wiki/Nhà_số_48_phố_Hàng_Ngang" target="_blank" class="wiki-link">nhà số 48 Hàng Ngang</a> để chuẩn bị soạn thảo bản Tuyên ngôn Độc lập lịch sử.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content-box">
+                        <h3>30/08/1945</h3>
+                        <p><strong>Vua Bảo Đại Thoái Vị:</strong> <a href="https://vi.wikipedia.org/wiki/Bảo_Đại" target="_blank" class="wiki-link">Vua Bảo Đại</a> đọc Tuyên ngôn Thoái vị tại Huế, trao ấn kiếm cho đại diện Chính phủ Lâm thời, chấm dứt chế độ phong kiến.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content-box">
+                        <h3>02/09/1945 - 14:00</h3>
+                        <p><strong>Lễ Độc Lập Tại Ba Đình:</strong> Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập, khai sinh ra nước <a href="https://vi.wikipedia.org/wiki/Việt_Nam_Dân_chủ_Cộng_hòa" target="_blank" class="wiki-link">Việt Nam Dân chủ Cộng hòa</a>.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content-box">
+                        <h3>06/01/1946</h3>
+                        <p><strong>Tổng Tuyển Cử Đầu Tiên:</strong> Toàn dân bầu ra <a href="https://vi.wikipedia.org/wiki/Quốc_hội_Việt_Nam_khóa_I" target="_blank" class="wiki-link">Quốc hội khóa I</a>, củng cố nền tảng pháp lý chính thức cho nhà nước Việt Nam độc lập.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ý nghĩa & Di sản -->
+        <section id="y-nghia">
+            <h2 class="section-title">Ý Nghĩa & Di Sản Lịch Sử</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🇻🇳</div>
+                    <h3>Khai Sinh Nước Việt Nam Mới</h3>
+                    <p>Chính thức ghi tên Việt Nam Dân chủ Cộng hòa lên bản đồ thế giới với vị thế một quốc gia độc lập, có chủ quyền.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🕊️</div>
+                    <h3>Chấm Dứt Ách Thống Trị</h3>
+                    <p>Xóa bỏ hoàn toàn ách đô hộ thực dân, phát xít và chế độ phong kiến tồn tại hàng ngàn năm trên mảnh đất quê hương.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Trách Nhiệm Thế Hệ Trẻ</h3>
+                    <p>Học sinh FPT Schools kế thừa tinh thần tự hào dân tộc, không ngừng học tập, sáng tạo công nghệ để xây dựng đất nước phồn vinh.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Câu hỏi tương tác / Quiz -->
+        <section id="trac-nghiem">
+            <h2 class="section-title">Thử Thách Kiến Thức Tương Tác</h2>
+            <div class="quiz-section">
+                
+                <!-- Câu 1 -->
+                <div class="quiz-card">
+                    <div class="quiz-question">Câu 1: Bản Tuyên ngôn Độc lập được Chủ tịch Hồ Chí Minh đọc tại đâu?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi! Đáp án đúng là Quảng trường Ba Đình.')">A. Nhà hát Lớn Hà Nội</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Bác Hồ đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.')">B. Quảng trường Ba Đình</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi! Đáp án đúng là Quảng trường Ba Đình.')">C. Phủ Chủ tịch</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi! Đáp án đúng là Quảng trường Ba Đình.')">D. Gò Đống Đa</button>
+                    </div>
+                    <div class="feedback-text"></div>
+                </div>
+
+                <!-- Câu 2 -->
+                <div class="quiz-card">
+                    <div class="quiz-question">Câu 2: Sự kiện ngày 02/09/1945 đã khai sinh ra nhà nước nào?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Khai sinh ra nước Việt Nam Dân chủ Cộng hòa.')">A. Việt Nam Dân chủ Cộng hòa</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Tên gọi Cộng hòa Xã hội Chủ nghĩa Việt Nam được đổi từ năm 1976.')">B. Cộng hòa Xã hội Chủ nghĩa Việt Nam</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi!')">C. Việt Nam Cộng hòa</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi!')">D. Đại Nam</button>
+                    </div>
+                    <div class="feedback-text"></div>
+                </div>
+
+                <!-- Câu 3 -->
+                <div class="quiz-card">
+                    <div class="quiz-question">Câu 3: Bác Hồ đã thốt lên câu nói thân thương nào khi đang đọc Tuyên ngôn Độc lập?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">A. "Không có gì quý hơn độc lập tự do!"</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Rất chuẩn! Bác đã dừng lại hỏi: Tôi nói đồng bào nghe rõ không?')">B. "Tôi nói đồng bào nghe rõ không?"</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">C. "Hỡi đồng bào toàn quốc!"</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">D. "Vì lợi ích mười năm trồng cây..."</button>
+                    </div>
+                    <div class="feedback-text"></div>
+                </div>
+
+                <!-- Câu 4 -->
+                <div class="quiz-card">
+                    <div class="quiz-question">Câu 4: Ngôi nhà lịch sử nào ở Hà Nội là nơi Chủ tịch Hồ Chí Minh đã soạn thảo bản Tuyên ngôn Độc lập?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Đúng rồi! Ngôi nhà số 48 Hàng Ngang là nơi Bác soạn thảo Tuyên ngôn Độc lập.')">A. Số 48 Hàng Ngang</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Đáp án đúng là 48 Hàng Ngang.')">B. Số 54 Hàng Bạc</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">C. Số 30 Hàng Bông</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">D. Số 12 Hàng Đào</button>
+                    </div>
+                    <div class="feedback-text"></div>
+                </div>
+
+                <!-- Câu 5 -->
+                <div class="quiz-card">
+                    <div class="quiz-question">Câu 5: Bài hát nào được cử hành trang trọng lần đầu tiên trước hàng vạn đồng bào tại Quảng trường Ba Đình ngày 02/09/1945?</div>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Bài hát do nhạc sĩ Văn Cao sáng tác là Tiến Quân Ca.')">A. Diệt Phát Xít</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Bài hát Tiến Quân Ca (nhạc sĩ Văn Cao) vang lên tự hào.')">B. Tiến Quân Ca</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">C. Lên Bàng</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">D. Du Kích Ca</button>
+                    </div>
+                    <div class="feedback-text"></div>
+                </div>
+
+                <!-- Bảng tổng kết điểm -->
+                <div class="quiz-result-box" id="result-box">
+                    <h3 id="result-title">🎉 Chúc mừng bạn đã hoàn thành!</h3>
+                    <p id="result-text">Bạn đã đạt 0/5 câu đúng.</p>
+                    <p style="margin-top: 10px; font-weight: 600; color: #555;">Hãy thách thức bạn bè thử sức ngay nào!</p>
+                    <div class="share-buttons">
+                        <button class="share-btn" onclick="copyShareLink()">📋 Sao Chép Link Kết Quả</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tài liệu tham khảo & Báo uy tín -->
+        <section id="tai-lieu">
+            <h2 class="section-title">Tài Liệu Tham Khảo & Báo Chính Thống</h2>
+            <div class="references-section">
+                <p style="font-size: 0.95rem; color: #555;">Dưới đây là các nguồn dữ liệu tư liệu lịch sử được tham khảo từ Bách khoa toàn thư mở Wikipedia và các trang báo chính thống uy tín của Nhà nước Việt Nam:</p>
+                
+                <div class="references-grid">
+                    <a href="https://vi.wikipedia.org/wiki/Qu%E1%BB%91c_kh%C3 me%22%22_Vi%E1%BB%87t_Nam" target="_blank" class="ref-card">
+                        <span class="ref-badge">Wikipedia</span>
+                        <div class="ref-info">
+                            <span class="ref-title">Quốc Khánh Việt Nam (02/09)</span>
+                            <span class="ref-source">vi.wikipedia.org</span>
+                        </div>
+                    </a>
+
+                    <a href="https://vi.wikipedia.org/wiki/Tuyen_ngon_doc_lap_nuoc_Viet_Nam_Dan_chu_Cong_hoa" target="_blank" class="ref-card">
+                        <span class="ref-badge">Wikipedia</span>
+                        <div class="ref-info">
+                            <span class="ref-title">Tuyên ngôn Độc lập 1945</span>
+                            <span class="ref-source">vi.wikipedia.org</span>
+                        </div>
+                    </a>
+
+                    <a href="https://baochinhphu.vn/" target="_blank" class="ref-card">
+                        <span class="ref-badge">Báo Chính Phủ</span>
+                        <div class="ref-info">
+                            <span class="ref-title">Báo Điện tử Chính phủ nước CỘNG HÒA XHCN Việt Nam</span>
+                            <span class="ref-source">baochinhphu.vn</span>
+                        </div>
+                    </a>
+
+                    <a href="https://nhandan.vn/" target="_blank" class="ref-card">
+                        <span class="ref-badge">Báo Nhân Dân</span>
+                        <div class="ref-info">
+                            <span class="ref-title">Cơ quan Trung ương Đảng Cộng sản Việt Nam</span>
+                            <span class="ref-source">nhandan.vn</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.tapchicongsan.org.vn/" target="_blank" class="ref-card">
+                        <span class="ref-badge">Tạp Chí Cộng Sản</span>
+                        <div class="ref-info">
+                            <span class="ref-title">Cơ quan Lý luận Chính trị của Trung ương Đảng</span>
+                            <span class="ref-source">tapchicongsan.org.vn</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.qdnd.vn/" target="_blank" class="ref-card">
+                        <span class="ref-badge">Báo QĐND</span>
+                        <div class="ref-info">
+                            <span class="ref-title">Báo Quân đội Nhân dân Việt Nam</span>
+                            <span class="ref-source">qdnd.vn</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Dự Án Học Tập FPT Schools - Tri Ân Lịch Sử Việt Nam</strong></p>
+        <p>Sản phẩm số phục vụ học tập & lan tỏa ý nghĩa lịch sử ngày 02/09/1945.</p>
+    </footer>
+
+    <!-- JavaScript Xử Lý Tương Tác, Hiệu Ứng Animation & Cuộn Trượt -->
+    <script>
+        // 1. Phương trình cuộn trượt mượt chính xác
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    const header = document.querySelector('header');
+
+                    if (targetElement) {
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 2. Hiệu ứng xuất hiện Timeline khi cuộn
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            timelineItems.forEach(item => observer.observe(item));
+
+            // 3. Hiệu ứng đếm số chạy tăng dần
+            const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+            statNumbers.forEach(stat => {
+                const target = +stat.getAttribute('data-target');
+                let count = 0;
+                const speed = target / 50;
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        stat.innerText = Math.ceil(count).toLocaleString() + (target === 80 ? '+' : '+');
+                        setTimeout(updateCount, 30);
+                    } else {
+                        stat.innerText = target.toLocaleString() + '+';
+                    }
+                };
+                updateCount();
+            });
+        });
+
+        // 4. Logic Trắc Nghiệm & Ripple Effect
+        let score = 0;
+        let answeredCount = 0;
+        const totalQuestions = 5;
+
+        function checkAnswer(event, button, isCorrect, feedbackMsg) {
+            const circle = document.createElement('span');
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+            circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+            circle.classList.add('ripple');
+
+            const ripple = button.querySelector('.ripple');
+            if (ripple) { ripple.remove(); }
+            button.appendChild(circle);
+
+            const parent = button.parentElement;
+            const options = parent.querySelectorAll('.quiz-option');
+            const feedback = parent.parentElement.querySelector('.feedback-text');
+
+            options.forEach(opt => {
+                opt.disabled = true;
+                if (opt !== button) { opt.classList.add('dimmed'); }
+            });
+
+            if (isCorrect) {
+                button.classList.add('correct');
+                feedback.style.color = '#155724';
+                feedback.style.backgroundColor = '#d4edda';
+                score++;
+            } else {
+                button.classList.add('incorrect');
+                feedback.style.color = '#721c24';
+                feedback.style.backgroundColor = '#f8d7da';
+            }
+
+            feedback.innerText = feedbackMsg;
+            feedback.style.display = 'block';
+            answeredCount++;
+
+            if (answeredCount === totalQuestions) {
+                setTimeout(showResult, 600);
+            }
+        }
+
+        function showResult() {
+            const resultBox = document.getElementById('result-box');
+            const resultText = document.getElementById('result-text');
+            
+            resultText.innerText = `Bạn đã xuất sắc trả lời đúng ${score}/${totalQuestions} câu hỏi về Lịch sử Quốc Khánh 02/09!`;
+            resultBox.style.display = 'block';
+            
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            const elementPosition = resultBox.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        function copyShareLink() {
+            const shareText = `Tôi vừa đạt ${score}/${totalQuestions} điểm thử thách Lịch sử Quốc Khánh 02/09 trên FPT Schools! Hãy thử sức tại đây: ${window.location.href}`;
+            navigator.clipboard.writeText(shareText).then(() => {
+                alert('Đã sao chép kết quả vào bộ nhớ tạm!');
+            });
+        }
+    </script>
+
+</body>
+</html>
