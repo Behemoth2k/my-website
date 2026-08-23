@@ -593,7 +593,7 @@
             box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
         }
 
-        /* --- REFERENCES SECTION (ĐÃ FIX LỆCH) --- */
+        /* --- REFERENCES SECTION (ĐÃ SỬA KHÔNG BỊ TRÀN KHUNG) --- */
         .references-section {
             background: #ffffff;
             border-radius: 16px;
@@ -606,7 +606,7 @@
         }
         .references-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 16px;
             margin-top: 20px;
             width: 100%;
@@ -645,6 +645,7 @@
             flex-direction: column;
             min-width: 0;
             flex: 1;
+            overflow: hidden;
         }
         .ref-title {
             font-weight: 700;
@@ -655,11 +656,16 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            width: 100%;
+            display: block;
         }
         .ref-source {
             font-size: 0.78rem;
             color: #666;
             font-style: italic;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         /* --- FOOTER DECORATION --- */
