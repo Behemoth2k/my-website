@@ -593,7 +593,7 @@
             box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
         }
 
-        /* --- REFERENCES SECTION (ÉP CỐ ĐỊNH GRID 2 CỘT x 3 HÀNG) --- */
+        /* --- REFERENCES SECTION (2 CỘT x 3 HÀNG CHUẨN) --- */
         .references-section {
             background: #ffffff;
             border-radius: 16px;
@@ -603,7 +603,7 @@
         }
         .references-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Cố định 2 cột đều nhau */
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px;
             margin-top: 20px;
         }
@@ -637,7 +637,7 @@
         .ref-info {
             display: flex;
             flex-direction: column;
-            min-width: 0; /* Giúp text rút gọn khi thiếu không gian, không bị vỡ layout */
+            min-width: 0;
         }
         .ref-title {
             font-weight: 700;
@@ -672,7 +672,7 @@
             .hero h1 { font-size: 2rem; }
             .intro-grid { grid-template-columns: 1fr; }
             .quiz-options { grid-template-columns: 1fr; }
-            .references-grid { grid-template-columns: 1fr; } /* Màn hình nhỏ điện thoại tự chuyển 1 cột */
+            .references-grid { grid-template-columns: 1fr; }
             
             .timeline::before { left: 20px; }
             .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
@@ -742,7 +742,7 @@
             <div class="intro-grid">
                 <div class="intro-text">
                     <p>Tháng 8 năm 1945, tình hình thế giới biến động nhanh chóng khi <a href="https://vi.wikipedia.org/wiki/Th%E1%BA%BF_chi%E1%BA%BFn_th%E1%BB%A1_hai" target="_blank" class="wiki-link">Thế chiến II</a> bước vào giai đoạn kết thúc. Phát xít Nhật tuyên bố đầu hàng vô điều kiện. Nắm bắt thời cơ ngàn năm có một, dưới sự lãnh đạo của Đảng và Chủ tịch <a href="https://vi.wikipedia.org/wiki/H%E1%BB%93_Ch%C3%AD_Minh" target="_blank" class="wiki-link">Hồ Chí Minh</a>, nhân dân Việt Nam đã tiến hành <a href="https://vi.wikipedia.org/wiki/C%C3%A1ch_m%E1%BA%A1ng_Th%C3%A1ng_T%C3%A1m" target="_blank" class="wiki-link">Tổng khởi nghĩa Cách mạng Tháng Tám</a> thành công rực rỡ.</p>
-                    <p>Ngày <strong>02 tháng 9 năm 1945</strong>, tại <a href="https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_tr%C6%B0%E1%BB%9Dng_Ba_%C4%90%C3%ACnh" target="_blank" class="wiki-link">Quảng trường Ba Đình</a> (Hà Nội), Chủ tịch Hồ Chí Minh đã thay mặt Chính phủ lâm thời đọc bản <a href="https://vi.wikipedia.org/wiki/Tuyen_ngon_doc_lap_nuoc_Viet_Nam_Dan_chu_Cong_hoa" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, đập tan hơn 80 năm ách đô hộ của thực dân Pháp và chế độ phong kiến.</p>
+                    <p>Ngày <strong>02 tháng 9 năm 1945</strong>, tại <a href="https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_tr%C6%B0%E1%BB%9Dng_Ba_%C4%90%C3%ACnh" target="_blank" class="wiki-link">Quảng trường Ba Đình</a> (Hà Nội), Chủ tịch Hồ Chí Minh đã thay mặt Chính phủ lâm thời đọc bản <a href="https://thuvienphapluat.vn/hoi-dap-phap-luat/toan-van-ban-tuyen-ngon-doc-lap-nam-1945-138049189.html" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, đập tan hơn 80 năm ách đô hộ của thực dân Pháp và chế độ phong kiến.</p>
                     <div class="quote-card">
                         <blockquote>
                             "Tất cả mọi người sinh ra đều có quyền bình đẳng. Tạo hóa cho họ những quyền không ai có thể xâm phạm được; trong những quyền ấy, có quyền được sống, quyền tự do và quyền mưu cầu hạnh phúc."
@@ -894,11 +894,11 @@
             </div>
         </section>
 
-        <!-- Tài liệu tham khảo & Báo uy tín (2 CỘT x 3 HÀNG CHUẨN) -->
+        <!-- Tài liệu tham khảo & Báo uy tín -->
         <section id="tai-lieu">
             <h2 class="section-title">Tài Liệu Tham Khảo & Báo Chính Thống</h2>
             <div class="references-section">
-                <p style="font-size: 0.95rem; color: #555;">Dưới đây là các nguồn dữ liệu tư liệu lịch sử được tham khảo từ Bách khoa toàn thư mở Wikipedia và các trang báo chính thống uy tín của Nhà nước Việt Nam:</p>
+                <p style="font-size: 0.95rem; color: #555;">Dưới đây là các nguồn dữ liệu tư liệu lịch sử được tham khảo từ Bách khoa toàn thư mở Wikipedia, Thư Viện Pháp Luật và các trang báo chính thống uy tín của Nhà nước Việt Nam:</p>
                 
                 <div class="references-grid">
                     <a href="https://vi.wikipedia.org/wiki/Qu%E1%BB%91c_kh%C3%A1nh_Vi%E1%BB%87t_Nam" target="_blank" class="ref-card">
@@ -909,11 +909,11 @@
                         </div>
                     </a>
 
-                    <a href="https://vi.wikipedia.org/wiki/Tuyen_ngon_doc_lap_nuoc_Viet_Nam_Dan_chu_Cong_hoa" target="_blank" class="ref-card">
-                        <span class="ref-badge">Wikipedia</span>
+                    <a href="https://thuvienphapluat.vn/hoi-dap-phap-luat/toan-van-ban-tuyen-ngon-doc-lap-nam-1945-138049189.html" target="_blank" class="ref-card">
+                        <span class="ref-badge" style="background: #1b6ec2;">Thư Viện Pháp Luật</span>
                         <div class="ref-info">
-                            <span class="ref-title">Tuyên ngôn Độc lập 1945</span>
-                            <span class="ref-source">vi.wikipedia.org</span>
+                            <span class="ref-title">Toàn Văn Bản Tuyên Ngôn Độc Lập 1945</span>
+                            <span class="ref-source">thuvienphapluat.vn</span>
                         </div>
                     </a>
 
@@ -960,9 +960,8 @@
         <p>Sản phẩm số phục vụ học tập & lan tỏa ý nghĩa lịch sử ngày 02/09/1945.</p>
     </footer>
 
-    <!-- JavaScript Xử Lý Tương Tác, Hiệu Ứng Animation & Cuộn Trượt -->
+    <!-- JavaScript Xử Lý Tương Tác -->
     <script>
-        // 1. Phương trình cuộn trượt mượt chính xác
         document.addEventListener('DOMContentLoaded', function() {
             const links = document.querySelectorAll('a[href^="#"]');
             links.forEach(link => {
@@ -985,7 +984,6 @@
                 });
             });
 
-            // 2. Hiệu ứng xuất hiện Timeline khi cuộn
             const timelineItems = document.querySelectorAll('.timeline-item');
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
@@ -997,7 +995,6 @@
 
             timelineItems.forEach(item => observer.observe(item));
 
-            // 3. Hiệu ứng đếm số chạy tăng dần
             const statNumbers = document.querySelectorAll('.stat-number[data-target]');
             statNumbers.forEach(stat => {
                 const target = +stat.getAttribute('data-target');
@@ -1016,7 +1013,6 @@
             });
         });
 
-        // 4. Logic Trắc Nghiệm & Ripple Effect
         let score = 0;
         let answeredCount = 0;
         const totalQuestions = 5;
