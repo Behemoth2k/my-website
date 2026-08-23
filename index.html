@@ -593,7 +593,7 @@
             box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
         }
 
-        /* --- REFERENCES SECTION (CẬP NHẬT GRID 2 CỘT x 3 HÀNG CHUẨN) --- */
+        /* --- REFERENCES SECTION (ÉP CỐ ĐỊNH GRID 2 CỘT x 3 HÀNG) --- */
         .references-section {
             background: #ffffff;
             border-radius: 16px;
@@ -603,7 +603,7 @@
         }
         .references-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Ép cố định 2 cột bằng nhau */
+            grid-template-columns: repeat(2, 1fr); /* Cố định 2 cột đều nhau */
             gap: 16px;
             margin-top: 20px;
         }
@@ -611,10 +611,10 @@
             background: #fafafa;
             border: 1px solid #eaeaea;
             border-radius: 10px;
-            padding: 16px;
+            padding: 14px 16px;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
             transition: all 0.3s ease;
             box-sizing: border-box;
             height: 100%;
@@ -627,7 +627,7 @@
         .ref-badge {
             background: #da251d;
             color: #fff;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             padding: 6px 10px;
             border-radius: 6px;
@@ -637,17 +637,20 @@
         .ref-info {
             display: flex;
             flex-direction: column;
-            min-width: 0; /* Đảm bảo chữ dài không làm bể layout */
+            min-width: 0; /* Giúp text rút gọn khi thiếu không gian, không bị vỡ layout */
         }
         .ref-title {
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: #2b2b2b;
             margin-bottom: 2px;
             line-height: 1.3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .ref-source {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #666;
             font-style: italic;
         }
@@ -669,7 +672,7 @@
             .hero h1 { font-size: 2rem; }
             .intro-grid { grid-template-columns: 1fr; }
             .quiz-options { grid-template-columns: 1fr; }
-            .references-grid { grid-template-columns: 1fr; } /* Trên màn hình điện thoại tự đưa về 1 cột */
+            .references-grid { grid-template-columns: 1fr; } /* Màn hình nhỏ điện thoại tự chuyển 1 cột */
             
             .timeline::before { left: 20px; }
             .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
@@ -738,8 +741,8 @@
             <h2 class="section-title">Bối Cảnh Lịch Sử Trong & Ngoài Nước</h2>
             <div class="intro-grid">
                 <div class="intro-text">
-                    <p>Tháng 8 năm 1945, tình hình thế giới biến động nhanh chóng khi <a href="https://vi.wikipedia.org/wiki/Thế_chiến_thứ_hai" target="_blank" class="wiki-link">Thế chiến II</a> bước vào giai đoạn kết thúc. Phát xít Nhật tuyên bố đầu hàng vô điều kiện. Nắm bắt thời cơ ngàn năm có một, dưới sự lãnh đạo của Đảng và Chủ tịch <a href="https://vi.wikipedia.org/wiki/Hồ_Chí_Minh" target="_blank" class="wiki-link">Hồ Chí Minh</a>, nhân dân Việt Nam đã tiến hành <a href="https://vi.wikipedia.org/wiki/Cách_mạng_Tháng_Tám" target="_blank" class="wiki-link">Tổng khởi nghĩa Cách mạng Tháng Tám</a> thành công rực rỡ.</p>
-                    <p>Ngày <strong>02 tháng 9 năm 1945</strong>, tại <a href="https://vi.wikipedia.org/wiki/Quảng_trường_Ba_Đình" target="_blank" class="wiki-link">Quảng trường Ba Đình</a> (Hà Nội), Chủ tịch Hồ Chí Minh đã thay mặt Chính phủ lâm thời đọc bản <a href="https://vi.wikipedia.org/wiki/Tuyên_ngôn_độc_lập_nước_Việt_Nam_Dân_chủ_Cộng_hòa" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, đập tan hơn 80 năm ách đô hộ của thực dân Pháp và chế độ phong kiến.</p>
+                    <p>Tháng 8 năm 1945, tình hình thế giới biến động nhanh chóng khi <a href="https://vi.wikipedia.org/wiki/Th%E1%BA%BF_chi%E1%BA%BFn_th%E1%BB%A1_hai" target="_blank" class="wiki-link">Thế chiến II</a> bước vào giai đoạn kết thúc. Phát xít Nhật tuyên bố đầu hàng vô điều kiện. Nắm bắt thời cơ ngàn năm có một, dưới sự lãnh đạo của Đảng và Chủ tịch <a href="https://vi.wikipedia.org/wiki/H%E1%BB%93_Ch%C3%AD_Minh" target="_blank" class="wiki-link">Hồ Chí Minh</a>, nhân dân Việt Nam đã tiến hành <a href="https://vi.wikipedia.org/wiki/C%C3%A1ch_m%E1%BA%A1ng_Th%C3%A1ng_T%C3%A1m" target="_blank" class="wiki-link">Tổng khởi nghĩa Cách mạng Tháng Tám</a> thành công rực rỡ.</p>
+                    <p>Ngày <strong>02 tháng 9 năm 1945</strong>, tại <a href="https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_tr%C6%B0%E1%BB%9Dng_Ba_%C4%90%C3%ACnh" target="_blank" class="wiki-link">Quảng trường Ba Đình</a> (Hà Nội), Chủ tịch Hồ Chí Minh đã thay mặt Chính phủ lâm thời đọc bản <a href="https://vi.wikipedia.org/wiki/Tuyen_ngon_doc_lap_nuoc_Viet_Nam_Dan_chu_Cong_hoa" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, đập tan hơn 80 năm ách đô hộ của thực dân Pháp và chế độ phong kiến.</p>
                     <div class="quote-card">
                         <blockquote>
                             "Tất cả mọi người sinh ra đều có quyền bình đẳng. Tạo hóa cho họ những quyền không ai có thể xâm phạm được; trong những quyền ấy, có quyền được sống, quyền tự do và quyền mưu cầu hạnh phúc."
@@ -761,31 +764,31 @@
                 <div class="timeline-item left">
                     <div class="content-box">
                         <h3>19/08/1945</h3>
-                        <p><strong>Khởi nghĩa giành chính quyền tại Hà Nội:</strong> Hàng vạn quần chúng chiếm Bắc Bộ Phủ, Phủ Khâm sai, đánh dấu thắng lợi quyết định của <a href="https://vi.wikipedia.org/wiki/Cách_mạng_Tháng_Tám" target="_blank" class="wiki-link">Cách mạng Tháng Tám</a>.</p>
+                        <p><strong>Khởi nghĩa giành chính quyền tại Hà Nội:</strong> Hàng vạn quần chúng chiếm Bắc Bộ Phủ, Phủ Khâm sai, đánh dấu thắng lợi quyết định của <a href="https://vi.wikipedia.org/wiki/C%C3%A1ch_m%E1%BA%A1ng_Th%C3%A1ng_T%C3%A1m" target="_blank" class="wiki-link">Cách mạng Tháng Tám</a>.</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="content-box">
                         <h3>25/08/1945</h3>
-                        <p><strong>Chủ tịch Hồ Chí Minh về Hà Nội:</strong> Bác đến ở tại <a href="https://vi.wikipedia.org/wiki/Nhà_số_48_phố_Hàng_Ngang" target="_blank" class="wiki-link">nhà số 48 Hàng Ngang</a> để chuẩn bị soạn thảo bản Tuyên ngôn Độc lập lịch sử.</p>
+                        <p><strong>Chủ tịch Hồ Chí Minh về Hà Nội:</strong> Bác đến ở tại <a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_s%E1%BB%91_48_ph%E1%BB%91_H%C3%A0ng_Ngang" target="_blank" class="wiki-link">nhà số 48 Hàng Ngang</a> để chuẩn bị soạn thảo bản Tuyên ngôn Độc lập lịch sử.</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="content-box">
                         <h3>30/08/1945</h3>
-                        <p><strong>Vua Bảo Đại Thoái Vị:</strong> <a href="https://vi.wikipedia.org/wiki/Bảo_Đại" target="_blank" class="wiki-link">Vua Bảo Đại</a> đọc Tuyên ngôn Thoái vị tại Huế, trao ấn kiếm cho đại diện Chính phủ Lâm thời, chấm dứt chế độ phong kiến.</p>
+                        <p><strong>Vua Bảo Đại Thoái Vị:</strong> <a href="https://vi.wikipedia.org/wiki/B%E1%BA%A3o_%C4%90%E1%BA%A1i" target="_blank" class="wiki-link">Vua Bảo Đại</a> đọc Tuyên ngôn Thoái vị tại Huế, trao ấn kiếm cho đại diện Chính phủ Lâm thời, chấm dứt chế độ phong kiến.</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="content-box">
                         <h3>02/09/1945 - 14:00</h3>
-                        <p><strong>Lễ Độc Lập Tại Ba Đình:</strong> Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập, khai sinh ra nước <a href="https://vi.wikipedia.org/wiki/Việt_Nam_Dân_chủ_Cộng_hòa" target="_blank" class="wiki-link">Việt Nam Dân chủ Cộng hòa</a>.</p>
+                        <p><strong>Lễ Độc Lập Tại Ba Đình:</strong> Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập, khai sinh ra nước <a href="https://vi.wikipedia.org/wiki/Vi%E1%BB%87t_Nam_D%C3%A2n_ch%E1%BB%A7_C%E1%BB%99ng_h%C3%B2a" target="_blank" class="wiki-link">Việt Nam Dân chủ Cộng hòa</a>.</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="content-box">
                         <h3>06/01/1946</h3>
-                        <p><strong>Tổng Tuyển Cử Đầu Tiên:</strong> Toàn dân bầu ra <a href="https://vi.wikipedia.org/wiki/Quốc_hội_Việt_Nam_khóa_I" target="_blank" class="wiki-link">Quốc hội khóa I</a>, củng cố nền tảng pháp lý chính thức cho nhà nước Việt Nam độc lập.</p>
+                        <p><strong>Tổng Tuyển Cử Đầu Tiên:</strong> Toàn dân bầu ra <a href="https://vi.wikipedia.org/wiki/Qu%E1%BB%91c_h%E1%BB%99i_Vi%E1%BB%87t_Nam_kh%C3%B3a_I" target="_blank" class="wiki-link">Quốc hội khóa I</a>, củng cố nền tảng pháp lý chính thức cho nhà nước Việt Nam độc lập.</p>
                     </div>
                 </div>
             </div>
@@ -891,7 +894,7 @@
             </div>
         </section>
 
-        <!-- Tài liệu tham khảo & Báo uy tín -->
+        <!-- Tài liệu tham khảo & Báo uy tín (2 CỘT x 3 HÀNG CHUẨN) -->
         <section id="tai-lieu">
             <h2 class="section-title">Tài Liệu Tham Khảo & Báo Chính Thống</h2>
             <div class="references-section">
