@@ -23,7 +23,7 @@
             line-height: 1.8;
             overflow-x: hidden;
         }
-        h1, h2, h3, h4, .logo, .nav-links a, .quiz-option, .quiz-btn, .share-btn, .stat-number, .ref-link {
+        h1, h2, h3, h4, .logo, .nav-links a, .quiz-option, .quiz-btn, .share-btn, .stat-number, .ref-link, .wish-input, .wish-submit-btn, .modal-title, .modal-btn {
             font-family: 'Montserrat', sans-serif;
         }
         a {
@@ -36,7 +36,6 @@
             border-radius: 12px;
             display: block;
         }
-        /* Styling cho inline links */
         .wiki-link {
             color: #D32F2F;
             font-weight: 600;
@@ -48,6 +47,7 @@
             border-bottom-style: solid;
             background-color: rgba(243, 111, 33, 0.08);
         }
+
         /* --- HEADER & NAVIGATION --- */
         header {
             background-color: rgba(255, 255, 255, 0.95);
@@ -124,7 +124,8 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-        /* --- HERO SECTION DECORATION --- */
+
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
             background: linear-gradient(135deg, rgba(186, 24, 27, 0.92), rgba(102, 7, 8, 0.95)), 
@@ -212,6 +213,7 @@
             box-shadow: 0 10px 25px rgba(243, 111, 33, 0.6);
             background: linear-gradient(45deg, #ff8c42, #f36f21);
         }
+
         /* --- MAIN CONTAINER --- */
         .container {
             max-width: 1050px;
@@ -234,7 +236,8 @@
             display: block;
             margin-top: 5px;
         }
-        /* --- STATS SECTION DECORATION --- */
+
+        /* --- STATS SECTION --- */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -273,7 +276,8 @@
             color: #555;
             font-weight: 600;
         }
-        /* --- INTRO & QUOTE DECORATION --- */
+
+        /* --- INTRO & QUOTE --- */
         .intro-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -335,7 +339,8 @@
             color: #f36f21;
             text-align: right;
         }
-        /* --- TIMELINE DECORATION & ANIMATION --- */
+
+        /* --- TIMELINE --- */
         .timeline {
             position: relative;
             max-width: 850px;
@@ -416,7 +421,7 @@
             text-align: left;
         }
 
-        /* --- CARDS GRID DECORATION --- */
+        /* --- CARDS GRID --- */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -449,7 +454,67 @@
             margin-bottom: 12px;
             color: #1a1a1a;
         }
-        /* --- QUIZ SECTION DECORATION --- */
+
+        /* --- WISH FORM STYLES --- */
+        .wish-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+            border: 1px solid rgba(243, 111, 33, 0.2);
+            margin-bottom: 80px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .wish-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            outline: none;
+            background-color: #fafafa;
+            transition: all 0.25s ease;
+            color: #333;
+        }
+        .wish-input:focus {
+            border-color: #f36f21;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(243, 111, 33, 0.1);
+        }
+        .wish-textarea {
+            resize: vertical;
+            min-height: 110px;
+            margin-bottom: 20px;
+        }
+        .wish-submit-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #d32f2f, #c62828);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 16px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .wish-submit-btn:hover {
+            background: linear-gradient(45deg, #e53935, #d32f2f);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.45);
+        }
+
+        /* --- QUIZ SECTION --- */
         .quiz-section {
             background: #ffffff;
             border-radius: 20px;
@@ -594,6 +659,7 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
         }
+
         /* --- REFERENCES SECTION --- */
         .references-section {
             background: #ffffff;
@@ -668,7 +734,74 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        /* --- FOOTER DECORATION --- */
+
+        /* --- CUSTOM MODAL STYLES --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-box {
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-top: 5px solid #f36f21;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        .modal-overlay.active .modal-box {
+            transform: translateY(0);
+        }
+        .modal-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .modal-title {
+            font-size: 1.25rem;
+            color: #8b0000;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .modal-message {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+        .modal-btn {
+            background: linear-gradient(45deg, #f36f21, #ff8c42);
+            color: white;
+            font-weight: 700;
+            padding: 10px 28px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(243, 111, 33, 0.3);
+            transition: transform 0.2s;
+        }
+        .modal-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- FOOTER --- */
         footer {
             background: #181818;
             color: #a0a0a0;
@@ -679,11 +812,13 @@
             border-top: 4px solid #f36f21;
         }
         footer p { margin-bottom: 6px; }
+
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             .hero-time { font-size: 1.2rem; }
             .intro-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
             .quiz-options { grid-template-columns: 1fr; }
             .references-grid { grid-template-columns: 1fr; }
             
@@ -712,6 +847,7 @@
                 <li><a href="#gioi-thieu">Giới Thiệu</a></li>
                 <li><a href="#dien-bien">Mốc Lịch Sử</a></li>
                 <li><a href="#y-nghia">Ý Nghĩa</a></li>
+                <li><a href="#loi-chuc">Gửi Lời Chúc</a></li>
                 <li><a href="#trac-nghiem">Thử Thách</a></li>
                 <li><a href="#tai-lieu">Tài Liệu</a></li>
             </ul>
@@ -812,13 +948,13 @@
         <section id="y-nghia">
             <h2 class="section-title">Ý NGHĨA LỊCH SỬ VÀ GIÁ TRỊ TIẾP NỐI</h2>
             <div class="cards-grid">
-<div class="card">
-    <div class="card-icon">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="Cờ Việt Nam" style="width: 38px; height: auto; border-radius: 3px; display: inline-block; vertical-align: middle;">
-    </div>
-    <h3>Khai Sinh nước Việt Nam Dân Chủ Cộng Hòa</h3>
-    <p>Nước Việt Nam Dân chủ Cộng hòa ra đời, đưa nhân dân Việt Nam từ thân phận nô lệ trở thành người làm chủ đất nước. Ngày nay là nước Cộng hòa xã hội chủ nghĩa Việt Nam.</p>
-</div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="Cờ Việt Nam" style="width: 38px; height: auto; border-radius: 3px; display: inline-block; vertical-align: middle;">
+                    </div>
+                    <h3>Khai Sinh nước Việt Nam Dân Chủ Cộng Hòa</h3>
+                    <p>Nước Việt Nam Dân chủ Cộng hòa ra đời, đưa nhân dân Việt Nam từ thân phận nô lệ trở thành người làm chủ đất nước. Ngày nay là nước Cộng hòa xã hội chủ nghĩa Việt Nam.</p>
+                </div>
                 <div class="card">
                     <div class="card-icon">🕊️</div>
                     <h3>Mở ra kỷ nguyên độc lập, tự do</h3>
@@ -832,11 +968,24 @@
             </div>
         </section>
 
+        <!-- Form Gửi Lời Chúc & Thắp Nến -->
+        <section id="loi-chuc" class="wish-section">
+            <h2 class="section-title">TRI ÂN & TRI THỨC TIẾP NỐI</h2>
+            <form onsubmit="handleWishSubmit(event)">
+                <div class="form-row">
+                    <input type="text" class="wish-input" placeholder="Họ và tên..." required>
+                    <input type="text" class="wish-input" placeholder="Lớp (Ví dụ: 10A2)...">
+                    <input type="text" class="wish-input" placeholder="Trường học / Tỉnh thành..." required>
+                </div>
+                <textarea class="wish-input wish-textarea" placeholder="Viết cảm nghĩ..." required></textarea>
+                <button type="submit" class="wish-submit-btn">🕯️ Gửi Lời Chúc & Thắp Nến</button>
+            </form>
+        </section>
+
         <!-- Câu hỏi tương tác / Quiz -->
         <section id="trac-nghiem">
             <h2 class="section-title">NHỚ VỀ MÙA THU 1945</h2>
             <div class="quiz-section">
-                
                 <!-- Câu 1 -->
                 <div class="quiz-card">
                     <div class="quiz-question">Câu 1: Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập tại địa điểm nào sau đây?</div>
@@ -848,7 +997,6 @@
                     </div>
                     <div class="feedback-text"></div>
                 </div>
-
                 <!-- Câu 2 -->
                 <div class="quiz-card">
                     <div class="quiz-question">Câu 2: Sự kiện ngày 2/9/1945 đánh dấu sự ra đời của nhà nước nào sau đây?</div>
@@ -860,7 +1008,6 @@
                     </div>
                     <div class="feedback-text"></div>
                 </div>
-
                 <!-- Câu 3 -->
                 <div class="quiz-card">
                     <div class="quiz-question">Câu 3: Địa điểm nào sau đây gắn trực tiếp với quá trình Chủ tịch Hồ Chí Minh soạn thảo bản Tuyên ngôn Độc lập?</div>
@@ -872,7 +1019,6 @@
                     </div>
                     <div class="feedback-text"></div>
                 </div>
-
                 <!-- Câu 4 -->
                 <div class="quiz-card">
                     <div class="quiz-question">Câu 4: Bài hát nào được cử hành trong lễ chào cờ ngày 2/9/1945?</div>
@@ -884,7 +1030,6 @@
                     </div>
                     <div class="feedback-text"></div>
                 </div>
-
                 <!-- Câu 5 -->
                 <div class="quiz-card">
                     <div class="quiz-question">Câu 5: Lễ Độc lập tại Quảng trường Ba Đình bắt đầu vào thời điểm nào?</div>
@@ -896,7 +1041,6 @@
                     </div>
                     <div class="feedback-text"></div>
                 </div>
-
                 <!-- Kết quả Quiz -->
                 <div class="quiz-result-box" id="result-box">
                     <h3 id="result-title">🎉 Chúc mừng bạn đã hoàn thành!</h3>
@@ -946,6 +1090,16 @@
         </section>
     </main>
 
+    <!-- Custom Modal Popup thay thế cho alert() -->
+    <div class="modal-overlay" id="customModal">
+        <div class="modal-box">
+            <div class="modal-icon">🕯️✨</div>
+            <div class="modal-title">Thông Báo</div>
+            <div class="modal-message" id="modalMessage">Cảm ơn bạn đã gửi lời chúc tri ân và thắp nến!</div>
+            <button class="modal-btn" onclick="closeModal()">Đóng</button>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p><strong>Dự Án Học Tập Môn Lịch Sử FPT Schools Tây Hà Nội</strong></p>
@@ -987,6 +1141,24 @@
             }, { threshold: 0.2 });
             timelineItems.forEach(item => observer.observe(item));
         });
+
+        // Hàm bật Popup tùy chỉnh
+        function showModal(message) {
+            document.getElementById('modalMessage').innerText = message;
+            document.getElementById('customModal').classList.add('active');
+        }
+
+        // Hàm đóng Popup
+        function closeModal() {
+            document.getElementById('customModal').classList.remove('active');
+        }
+
+        // Xử lý Form Lời Chúc
+        function handleWishSubmit(e) {
+            e.preventDefault();
+            showModal('Cảm ơn bạn đã gửi lời chúc tri ân và thắp nến thành công!');
+            e.target.reset();
+        }
 
         // Quiz Logic
         let score = 0;
@@ -1058,10 +1230,11 @@
             });
         }
 
+        // Sao chép link kết quả
         function copyShareLink() {
             const shareText = `Tôi vừa đạt ${score}/${totalQuestions} điểm thử thách Lịch sử Quốc Khánh 02/09 trên FPT Schools! Hãy thử sức tại đây: ${window.location.href}`;
             navigator.clipboard.writeText(shareText).then(() => {
-                alert('Đã sao chép kết quả vào bộ nhớ tạm!');
+                showModal('Đã sao chép kết quả vào bộ nhớ tạm!');
             });
         }
     </script>
