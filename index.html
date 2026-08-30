@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lễ Quốc Khánh 02/09/1945 - FPT Schools Project</title>
+    <title>Lễ Quốc Khánh 02/09/1945 - Dự Án Môn Lịch Sử FPT Schools</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
@@ -36,7 +36,7 @@
             border-radius: 12px;
             display: block;
         }
-        /* Styling cho inline wiki links */
+        /* Styling cho inline links */
         .wiki-link {
             color: #D32F2F;
             font-weight: 600;
@@ -171,17 +171,25 @@
             100% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 205, 0, 0.8); }
         }
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             line-height: 1.25;
             text-shadow: 0 3px 10px rgba(0,0,0,0.5);
             background: linear-gradient(to right, #ffffff, #ffe3d5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .hero-time {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffcd00;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             opacity: 0.95;
             margin-bottom: 35px;
             font-style: italic;
@@ -217,6 +225,7 @@
             margin-bottom: 45px;
             position: relative;
             font-weight: 800;
+            text-transform: uppercase;
         }
         .section-title::after {
             content: '❖';
@@ -254,7 +263,7 @@
             box-shadow: 0 15px 35px rgba(243, 111, 33, 0.15);
         }
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #D32F2F;
             margin-bottom: 8px;
@@ -351,11 +360,12 @@
         }
         .timeline-item.left {
             left: 0;
-            text-align: right;
+            text-align: left;
             transform: translateX(-50px);
         }
         .timeline-item.right {
             left: 50%;
+            text-align: left;
             transform: translateX(50px);
         }
         .timeline-item.visible {
@@ -389,6 +399,7 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.06);
             border-top: 3px solid #f36f21;
             transition: transform 0.3s;
+            text-align: left;
         }
         .content-box:hover {
             transform: translateY(-3px);
@@ -398,6 +409,13 @@
             margin-bottom: 6px;
             font-size: 1.15rem;
         }
+        .timeline-item.left .content-box h3 {
+            text-align: right;
+        }
+        .timeline-item.right .content-box h3 {
+            text-align: left;
+        }
+
         /* --- CARDS GRID DECORATION --- */
         .cards-grid {
             display: grid;
@@ -483,7 +501,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(243, 111, 33, 0.15);
         }
-        /* Ripple Effect */
         .quiz-option .ripple {
             position: absolute;
             border-radius: 50%;
@@ -495,7 +512,6 @@
         @keyframes ripple-effect {
             to { transform: scale(4); opacity: 0; }
         }
-        /* Đúng / Sai Animations */
         .quiz-option.correct {
             background-color: #d4edda !important;
             border-color: #28a745 !important;
@@ -665,7 +681,8 @@
         footer p { margin-bottom: 6px; }
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-time { font-size: 1.2rem; }
             .intro-grid { grid-template-columns: 1fr; }
             .quiz-options { grid-template-columns: 1fr; }
             .references-grid { grid-template-columns: 1fr; }
@@ -675,6 +692,7 @@
             .timeline-item.left { text-align: left; }
             .timeline-item.right { left: 0; }
             .timeline-item.left::after, .timeline-item.right::after { left: 8px; }
+            .timeline-item.left .content-box h3 { text-align: left; }
         }
     </style>
 </head>
@@ -686,7 +704,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/FPT_logo_2010.svg" alt="Logo FPT" class="fpt-logo">
                 <div class="logo-text">
                     <span class="school-name">FPT SCHOOLS</span>
-                    <span class="sub-title">Dự án học tập môn Lịch Sử</span>
+                    <span class="sub-title">Dự án môn Lịch sử</span>
                 </div>
             </div>
             <ul class="nav-links">
@@ -699,172 +717,186 @@
             </ul>
         </nav>
     </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">Mốc Lịch Sử</span>
+            <span class="hero-badge">MÙA THU ĐỘC LẬP</span>
             <h1>NGÀY QUỐC KHÁNH NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h1>
-            <p>"Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do và độc lập."</p>
-            <a href="#gioi-thieu" class="btn">Khám Phá Lịch Sử</a>
+            <div class="hero-time">2/9/1945 – 2/9/2026</div>
+            <p>"Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thực đã thành một nước tự do, độc lập."</p>
+            <a href="#gioi-thieu" class="btn">DẤU ẤN NGÀY 2/9</a>
         </div>
     </section>
+
     <!-- Main Container -->
     <main class="container">
         <!-- Thống kê con số lịch sử -->
         <section id="con-so">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number" data-target="500000">0</div>
-                    <div class="stat-label">Quần chúng nhân dân hội tham dự lễ độc lập tại Quảng trường Ba Đình</div>
+                    <div class="stat-number">50 VẠN NGƯỜI</div>
+                    <div class="stat-label">Dự Lễ Độc lập tại Quảng trường Ba Đình</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">14:00</div>
-                    <div class="stat-label">Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập</div>
+                    <div class="stat-number">15 NGÀY</div>
+                    <div class="stat-label">Tổng khởi nghĩa giành chính quyền thắng lợi trên cả nước</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" data-target="80">0</div>
-                    <div class="stat-label">Năm ách thống trị thực dân bị xóa bỏ</div>
+                    <div class="stat-number">81 NĂM</div>
+                    <div class="stat-label">Quốc khánh Việt Nam — 2/9/1945 – 2/9/2026</div>
                 </div>
             </div>
         </section>
+
         <!-- Giới thiệu & Bối cảnh -->
         <section id="gioi-thieu">
-            <h2 class="section-title">Bối Cảnh Lịch Sử Trong & Ngoài Nước</h2>
+            <h2 class="section-title">BỐI CẢNH LỊCH SỬ</h2>
             <div class="intro-grid">
                 <div class="intro-text">
-                    <p>Tháng 8 năm 1945, tình hình thế giới biến động nhanh chóng khi <a href="https://vnexpress.net/the-chien-ii-cuoc-chien-khoc-liet-nhat-lich-su-nhan-loai-3209626.html" target="_blank" class="wiki-link">Thế chiến II</a> bước vào giai đoạn kết thúc. Phát xít Nhật tuyên bố đầu hàng vô điều kiện. Nắm bắt thời cơ ngàn năm có một, dưới sự lãnh đạo của Đảng và Chủ tịch <a href="https://vi.wikipedia.org/wiki/Hồ_Chí_Minh" target="_blank" class="wiki-link">Hồ Chí Minh</a>, nhân dân Việt Nam đã tiến hành <a href="https://vi.wikipedia.org/wiki/Cách_mạng_Tháng_Tám" target="_blank" class="wiki-link">Tổng khởi nghĩa Cách mạng Tháng Tám</a> thành công rực rỡ.</p>
-                    <p>Ngày <strong>02 tháng 9 năm 1945</strong>, tại <a href="https://vi.wikipedia.org/wiki/Quảng_trường_Ba_Đình" target="_blank" class="wiki-link">Quảng trường Ba Đình</a> (Hà Nội), Chủ tịch Hồ Chí Minh đã thay mặt Chính phủ lâm thời đọc bản <a href="https://vi.wikipedia.org/wiki/Tuyên_ngôn_độc_lập_nước_Việt_Nam_Dân_chủ_Cộng_hòa" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, đập tan hơn 80 năm ách đô hộ của thực dân Pháp và chế độ phong kiến.</p>
+                    <p>Tháng 8 năm 1945, <a href="https://tulieuvankien.dangcongsan.vn/ho-so-su-kien-nhan-chung/su-kien-va-nhan-chung/chien-tranh-the-gioi-thu-hai-1939-1945-3354" target="_blank" class="wiki-link">Chiến tranh thế giới thứ hai</a> bước vào giai đoạn kết thúc. Ngày 15/8/1945, Nhật Bản tuyên bố đầu hàng Đồng minh vô điều kiện. Ở Đông Dương, quân Nhật rệu rã, Chính phủ Trần Trọng Kim hoang mang; thời cơ thuận lợi cho Tổng khởi nghĩa giành chính quyền đã xuất hiện.</p>
+                    <p>Nắm bắt thời cơ, dưới sự lãnh đạo của Đảng Cộng sản Đông Dương và Chủ tịch <a href="https://chinhphu.vn/chu-tich-ho-chi-minh-68380" target="_blank" class="wiki-link">Hồ Chí Minh</a>, nhân dân Việt Nam tiến hành <a href="https://baotanglichsu.vn/vi/Articles/3097/18473/tong-khoi-nghia-cach-mang-thang-tam-nam-1945.html" target="_blank" class="wiki-link">Tổng khởi nghĩa Cách mạng tháng Tám</a>, giành chính quyền thắng lợi trên phạm vi cả nước.</p>
+                    <p>Ngày 2/9/1945, tại <a href="https://hanoidep.vn/quang-truong-ba-dinh-ba-dinh-ha-noi/" target="_blank" class="wiki-link">Quảng trường Ba Đình</a>, Chủ tịch Hồ Chí Minh thay mặt Chính phủ lâm thời đọc <a href="https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/tuyen-ngon-doc-lap-ban-hung-ca-khang-dinh-quyen-doc-lap-tu-chu-cua-dan-toc-viet-nam-12721" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, tuyên bố trước quốc dân và thế giới sự ra đời của nước Việt Nam Dân chủ Cộng hòa.</p>
                     <div class="quote-card">
                         <blockquote>
                             "Tất cả mọi người sinh ra đều có quyền bình đẳng. Tạo hóa cho họ những quyền không ai có thể xâm phạm được; trong những quyền ấy, có quyền được sống, quyền tự do và quyền mưu cầu hạnh phúc."
                         </blockquote>
-                        <div class="author">— Trích Tuyên ngôn Độc lập (02/09/1945)</div>
+                        <div class="author">- Hồ Chí Minh, Tuyên ngôn Độc lập, 2/9/1945</div>
                     </div>
                 </div>
                 <div class="img-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ529knWiSieUTBBolu41IZHZbznMrJtC09OvpqptyrAbt3cUOFN4w1UneY&s=10" alt="Quảng trường Ba Đình 02/09/1945">
-                    <div class="img-caption">Lễ đài Quảng trường Ba Đình tràn ngập cờ đỏ sao vàng ngày 02/09/1945.</div>
+                    <img src="https://file3.qdnd.vn/data/images/0/2022/09/01/tvkimgiang/bac%20ho%20doc%20tuyen%20ngon.jpg?dpi=150&quality=100&w=870" alt="Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình">
+                    <div class="img-caption">Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình, ngày 2/9/1945. Ảnh tư liệu.</div>
                 </div>
             </div>
         </section>
+
         <!-- Diễn biến timeline -->
         <section id="dien-bien">
             <h2 class="section-title">HÀNH TRÌNH ĐẾN NGÀY ĐỘC LẬP</h2>
             <div class="timeline">
                 <div class="timeline-item left">
                     <div class="content-box">
-                        <h3>19/08/1945</h3>
-                        <p><strong>Khởi nghĩa giành chính quyền tại Hà Nội:</strong> Hàng vạn quần chúng chiếm Bắc Bộ Phủ, Phủ Khâm sai, đánh dấu thắng lợi quyết định của <a href="https://vi.wikipedia.org/wiki/C%C3%A1ch_m%E1%BA%A1ng_Th%C3%A1ng_T%C3%A1m" target="_blank" class="wiki-link">Cách mạng Tháng Tám</a>.</p>
+                        <h3>22/8/1945</h3>
+                        <p>Chủ tịch Hồ Chí Minh rời Tân Trào, bắt đầu hành trình <a href="https://www.vietnam.vn/bac-ho-roi-tan-trao-len-duong-ve-ha-noi-1945" target="_blank" class="wiki-link">về Hà Nội</a>.</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="content-box">
-                        <h3>25/08/1945</h3>
-                        <p><strong>Chủ tịch Hồ Chí Minh về Hà Nội:</strong> Bác đến ở tại <a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_48_H%C3%A0ng_Ngang" target="_blank" class="wiki-link">nhà số 48 Hàng Ngang</a> </p>
+                        <h3>25/8/1945</h3>
+                        <p>Chủ tịch Hồ Chí Minh về tới Hà Nội; Người đến ở và làm việc tại <a href="https://48hangngang.hochiminh.vn/" target="_blank" class="wiki-link">nhà số 48 Hàng Ngang</a>.</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="content-box">
-                        <h3>30/08/1945</h3>
-                            <p><strong>Hoàn thiện </strong> <a href="https://nhandan.vn/special/tuyenngondoclap_ynghia/index.html" target="_blank" class="wiki-link">dự thảo Tuyên ngôn Độc Lập</a> Chủ tịch Hồ Chí Minh đọc bản dự thảo cho một số đồng chí nghe và trao đổi, tiếp thu ý kiến góp ý.</p>
-                        </div>
+                        <h3>28/8/1945</h3>
+                        <p><strong>Khởi thảo Tuyên ngôn Độc lập:</strong> Tại nhà số 48 Hàng Ngang, Chủ tịch Hồ Chí Minh tập trung <a href="https://baovanhoa.vn/chinh-tri/ngay-truyen-thong-nganh-van-hoa-260173.html" target="_blank" class="wiki-link">soạn thảo Tuyên ngôn Độc lập</a>.</p>
+                    </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="content-box">
-                        <h3>02/09/1945 - 14:00</h3>
-                        <p><strong>Lễ Độc Lập Tại Ba Đình:</strong> Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập, khai sinh ra nước <a href="https://vi.wikipedia.org/wiki/Vi%E1%BB%87t_Nam_D%C3%A2n_ch%E1%BB%A7_C%E1%BB%99ng_h%C3%B2a" target="_blank" class="wiki-link">Việt Nam Dân chủ Cộng hòa</a>.</p>
+                        <h3>31/8/1945</h3>
+                        <p><strong>Hoàn chỉnh Tuyên ngôn Độc lập:</strong> Chủ tịch Hồ Chí Minh bổ sung một số điểm, <a href="https://www.qdnd.vn/tu-lieu-ho-so/ngay-nay-nam-xua/ngay-31-8-1945-bac-ho-sua-chua-lan-cuoi-cung-van-ban-tuyen-ngon-doc-lap-700636" target="_blank" class="wiki-link">hoàn chỉnh bản Tuyên ngôn độc lập</a>.</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="content-box">
-                        <h3>06/01/1946</h3>
-                        <p><strong>Tổng Tuyển Cử Đầu Tiên:</strong> Toàn dân bầu ra <a href="https://vi.wikipedia.org/wiki/Qu%E1%BB%91c_h%E1%BB%99i_Vi%E1%BB%87t_Nam_kh%C3%B3a_I" target="_blank" class="wiki-link">Quốc hội khóa I</a>, củng cố nền tảng pháp lý chính thức cho nhà nước Việt Nam độc lập.</p>
+                        <h3>14 GIỜ, 2/9/1945</h3>
+                        <p><strong>TUYÊN BỐ NỀN ĐỘC LẬP:</strong> Tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh thay mặt Chính phủ lâm thời đọc <a href="https://baotanglichsu.vn/vi/Articles/3097/19484/tuyen-ngon-djoc-lap-2-9-1945-ban-tuyen-bo-ve-nhan-quyen-o-viet-nam.html" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, tuyên bố sự ra đời của nước Việt Nam Dân chủ Cộng hòa.</p>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Ý nghĩa & Di sản -->
         <section id="y-nghia">
-            <h2 class="section-title">Ý Nghĩa & Di Sản Lịch Sử</h2>
+            <h2 class="section-title">Ý NGHĨA LỊCH SỬ VÀ GIÁ TRỊ TIẾP NỐI</h2>
             <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">vn</div>
-                    <h3>Khai Sinh Nước Việt Nam Dân Chủ Cộng Hòa</h3>
-                    <p>Nhà nước Việt Nam mới ra đời, nhân dân trở thành người làm chủ đất nước.</p>
-                </div>
+<div class="card">
+    <div class="card-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="Cờ Việt Nam" style="width: 38px; height: auto; border-radius: 3px; display: inline-block; vertical-align: middle;">
+    </div>
+    <h3>Khai Sinh nước Việt Nam Dân Chủ Cộng Hòa</h3>
+    <p>Nước Việt Nam Dân chủ Cộng hòa ra đời, đưa nhân dân Việt Nam từ thân phận nô lệ trở thành người làm chủ đất nước. Ngày nay là nước Cộng hòa xã hội chủ nghĩa Việt Nam.</p>
+</div>
                 <div class="card">
                     <div class="card-icon">🕊️</div>
-                    <h3>MỞ RA KỶ NGUYÊN ĐỘC LẬP, TỰ DO</h3>
-                    <p>Chấm dứt ách thống trị của chủ nghĩa thực dân, xóa bỏ chế độ phong kiến, mở ra kỷ nguyên độc lập, tự do của dân tộc; đồng thời cổ vũ mạnh mẽ phong trào giải phóng dân tộc trên thế giới.</p>
+                    <h3>Mở ra kỷ nguyên độc lập, tự do</h3>
+                    <p>Thắng lợi của Cách mạng tháng Tám và sự kiện ngày 2/9/1945 đã mở ra kỷ nguyên độc lập, tự do cho dân tộc Việt Nam; đồng thời góp phần làm suy yếu hệ thống thuộc địa của chủ nghĩa thực dân và cổ vũ mạnh mẽ phong trào đấu tranh giải phóng dân tộc trên thế giới.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🎓</div>
                     <h3>Tiếp nối hành trình 81 năm</h3>
-                    <p>Học sinh FPT Schools phát huy tinh thần yêu nước, chủ động học tập, làm chủ công nghệ, đổi mới sáng tạo, sử dụng AI có trách nhiệm và tôn trọng sự thật lịch sử, góp phần xây dựng đất nước phát triển trong kỉ nguyên vươn mình.
-</p>
+                    <p>Thế hệ trẻ phát huy tinh thần yêu nước, chủ động học tập, làm chủ công nghệ, đổi mới sáng tạo, sử dụng AI có trách nhiệm và tôn trọng sự thật lịch sử, góp phần xây dựng đất nước phát triển, phồn vinh trong kỷ nguyên mới.</p>
                 </div>
             </div>
         </section>
+
         <!-- Câu hỏi tương tác / Quiz -->
         <section id="trac-nghiem">
-            <h2 class="section-title">Thử Thách Kiến Thức Tương Tác</h2>
+            <h2 class="section-title">NHỚ VỀ MÙA THU 1945</h2>
             <div class="quiz-section">
                 
                 <!-- Câu 1 -->
                 <div class="quiz-card">
-                    <div class="quiz-question">Câu 1: Bản Tuyên ngôn Độc lập được Chủ tịch Hồ Chí Minh đọc tại đâu?</div>
+                    <div class="quiz-question">Câu 1: Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập tại địa điểm nào sau đây?</div>
                     <div class="quiz-options">
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi! Đáp án đúng là Quảng trường Ba Đình.')">A. Nhà hát Lớn Hà Nội</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Bác Hồ đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.')">B. Quảng trường Ba Đình</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi! Đáp án đúng là Quảng trường Ba Đình.')">C. Phủ Chủ tịch</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi! Đáp án đúng là Quảng trường Ba Đình.')">D. Gò Đống Đa</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Đáp án đúng là C. Quảng trường Ba Đình.')">A. Nhà hát Lớn Hà Nội</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Đáp án đúng là C. Quảng trường Ba Đình.')">B. Phủ Khâm sai</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình.')">C. Quảng trường Ba Đình</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Đáp án đúng là C. Quảng trường Ba Đình.')">D. Nhà số 48 Hàng Ngang</button>
                     </div>
                     <div class="feedback-text"></div>
                 </div>
+
                 <!-- Câu 2 -->
                 <div class="quiz-card">
-                    <div class="quiz-question">Câu 2: Sự kiện ngày 02/09/1945 đã khai sinh ra nhà nước nào?</div>
+                    <div class="quiz-question">Câu 2: Sự kiện ngày 2/9/1945 đánh dấu sự ra đời của nhà nước nào sau đây?</div>
                     <div class="quiz-options">
-                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Khai sinh ra nước Việt Nam Dân chủ Cộng hòa.')">A. Việt Nam Dân chủ Cộng hòa</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Tên gọi Cộng hòa Xã hội Chủ nghĩa Việt Nam được đổi từ năm 1976.')">B. Cộng hòa Xã hội Chủ nghĩa Việt Nam</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi!')">C. Việt Nam Cộng hòa</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Sai rồi!')">D. Đại Nam</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Sự kiện đã khai sinh ra nước Việt Nam Dân chủ Cộng hòa.')">A. Nước Việt Nam Dân chủ Cộng hòa</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Quốc hiệu Cộng hòa xã hội chủ nghĩa Việt Nam được sử dụng từ năm 1976.')">B. Nước Cộng hòa xã hội chủ nghĩa Việt Nam</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">C. Nhà nước Việt Nam Cộng hòa</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">D. Nhà nước Đại Việt</button>
                     </div>
                     <div class="feedback-text"></div>
                 </div>
+
                 <!-- Câu 3 -->
                 <div class="quiz-card">
-                    <div class="quiz-question">Câu 3: Bác Hồ đã thốt lên câu nói thân thương nào khi đang đọc Tuyên ngôn Độc lập?</div>
+                    <div class="quiz-question">Câu 3: Địa điểm nào sau đây gắn trực tiếp với quá trình Chủ tịch Hồ Chí Minh soạn thảo bản Tuyên ngôn Độc lập?</div>
                     <div class="quiz-options">
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">A. "Không có gì quý hơn độc lập tự do!"</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Rất chuẩn! Bác đã dừng lại hỏi: Tôi nói đồng bào nghe rõ không?')">B. "Tôi nói đồng bào nghe rõ không?"</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">C. "Hỡi đồng bào toàn quốc!"</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">D. "Vì lợi ích mười năm trồng cây..."</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác! Đáp án đúng là B. Nhà số 48 Hàng Ngang.')">A. Nhà hát Lớn Hà Nội</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Rất chuẩn! Ngôi nhà số 48 Hàng Ngang là nơi Bác khởi thảo bản Tuyên ngôn Độc lập.')">B. Nhà số 48 Hàng Ngang</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">C. Phủ Khâm sai</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">D. Nhà số 12 Ngô Quyền</button>
                     </div>
                     <div class="feedback-text"></div>
                 </div>
+
                 <!-- Câu 4 -->
                 <div class="quiz-card">
-                    <div class="quiz-question">Câu 4: Ngôi nhà lịch sử nào ở Hà Nội là nơi Chủ tịch Hồ Chí Minh đã soạn thảo bản Tuyên ngôn Độc lập?</div>
+                    <div class="quiz-question">Câu 4: Bài hát nào được cử hành trong lễ chào cờ ngày 2/9/1945?</div>
                     <div class="quiz-options">
-                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Đúng rồi! Ngôi nhà số 48 Hàng Ngang là nơi Bác soạn thảo Tuyên ngôn Độc lập.')">A. Số 48 Hàng Ngang</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Đáp án đúng là 48 Hàng Ngang.')">B. Số 54 Hàng Bạc</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">C. Số 30 Hàng Bông</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">D. Số 12 Hàng Đào</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Đáp án là B. Tiến quân ca.')">A. Diệt phát xít</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Bài hát Tiến Quân Ca đã vang lên trang nghiêm trong Lễ Độc lập.')">B. Tiến quân ca</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">C. Lên đàng</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">D. Du kích ca</button>
                     </div>
                     <div class="feedback-text"></div>
                 </div>
+
                 <!-- Câu 5 -->
                 <div class="quiz-card">
-                    <div class="quiz-question">Câu 5: Bài hát nào được cử hành trang trọng lần đầu tiên trước hàng vạn đồng bào tại Quảng trường Ba Đình ngày 02/09/1945?</div>
+                    <div class="quiz-question">Câu 5: Lễ Độc lập tại Quảng trường Ba Đình bắt đầu vào thời điểm nào?</div>
                     <div class="quiz-options">
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng! Bài hát do nhạc sĩ Văn Cao sáng tác là Tiến Quân Ca.')">A. Diệt Phát Xít</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Chính xác! Bài hát Tiến Quân Ca (nhạc sĩ Văn Cao) vang lên tự hào.')">B. Tiến Quân Ca</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">C. Lên Bàng</button>
-                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa đúng!')">D. Du Kích Ca</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác! Lễ bắt đầu lúc 14 giờ.')">A. 8 giờ</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">B. 10 giờ</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, false, 'Chưa chính xác!')">C. 12 giờ</button>
+                        <button class="quiz-option" onclick="checkAnswer(event, this, true, 'Đúng rồi! Lễ Độc lập chính thức bắt đầu vào lúc 14 giờ ngày 2/9/1945.')">D. 14 giờ</button>
                     </div>
                     <div class="feedback-text"></div>
                 </div>
+
                 <!-- Kết quả Quiz -->
                 <div class="quiz-result-box" id="result-box">
                     <h3 id="result-title">🎉 Chúc mừng bạn đã hoàn thành!</h3>
@@ -874,31 +906,18 @@
                 </div>
             </div>
         </section>
+
         <!-- Tài liệu tham khảo -->
         <section id="tai-lieu">
-            <h2 class="section-title">Tài Liệu Tham Khảo & Báo Chính Thống</h2>
+            <h2 class="section-title">TÀI LIỆU THAM KHẢO</h2>
             <div class="references-section">
-                <p style="font-size: 0.95rem; color: #555;">Dưới đây là các nguồn dữ liệu tư liệu lịch sử được tham khảo từ Thư Viện Pháp Luật và các trang báo chính thống uy tín của Nhà nước Việt Nam:</p>
+                <p style="font-size: 0.95rem; color: #555;">Tư liệu lịch sử và nội dung trên website được tổng hợp, đối chiếu từ Sách giáo khoa và các nguồn báo chí chính thống của Nhà nước Việt Nam:</p>
                 <div class="references-grid">
-                    <a href="https://thuvienphapluat.vn/hoi-dap-phap-luat/toan-van-ban-tuyen-ngon-doc-lap-nam-1945-138049189.html" target="_blank" class="ref-card">
-                        <span class="ref-badge">Thư Viện Pháp Luật</span>
+                    <a href="https://taphuan.nxbgd.vn/tap-huan/chi-tiet-sach/lich-su-12-939853322.939853322" target="_blank" class="ref-card">
+                        <span class="ref-badge">Sách Giáo Khoa</span>
                         <div class="ref-info">
-                            <span class="ref-title">Tuyên ngôn Độc lập 1945</span>
-                            <span class="ref-source">thuvienphapluat.vn</span>
-                        </div>
-                    </a>
-                    <a href="https://vnexpress.net/the-chien-ii-cuoc-chien-khoc-liet-nhat-lich-su-nhan-loai-3209626.html" target="_blank" class="ref-card">
-                        <span class="ref-badge">VnExpress</span>
-                        <div class="ref-info">
-                            <span class="ref-title">Thế chiến II: Cuộc chiến khốc liệt nhất lịch sử</span>
-                            <span class="ref-source">vnexpress.net</span>
-                        </div>
-                    </a>
-                    <a href="https://baochinhphu.vn/" target="_blank" class="ref-card">
-                        <span class="ref-badge">Báo Chính phủ</span>
-                        <div class="ref-info">
-                            <span class="ref-title">Báo Điện tử Chính phủ nước CỘNG HÒA XHCN Việt Nam</span>
-                            <span class="ref-source">baochinhphu.vn</span>
+                            <span class="ref-title">SGK Lịch sử 12 – Kết nối tri thức với cuộc sống (Bài 6)</span>
+                            <span class="ref-source">Bộ GD&ĐT</span>
                         </div>
                     </a>
                     <a href="https://nhandan.vn/" target="_blank" class="ref-card">
@@ -908,13 +927,6 @@
                             <span class="ref-source">nhandan.vn</span>
                         </div>
                     </a>
-                    <a href="https://www.tapchicongsan.org.vn/" target="_blank" class="ref-card">
-                        <span class="ref-badge">Tạp chí Cộng sản</span>
-                        <div class="ref-info">
-                            <span class="ref-title">Cơ quan Lý luận Chính trị của Trung ương Đảng</span>
-                            <span class="ref-source">tapchicongsan.org.vn</span>
-                        </div>
-                    </a>
                     <a href="https://www.qdnd.vn/" target="_blank" class="ref-card">
                         <span class="ref-badge">Báo QĐND</span>
                         <div class="ref-info">
@@ -922,16 +934,25 @@
                             <span class="ref-source">qdnd.vn</span>
                         </div>
                     </a>
+                    <a href="https://baochinhphu.vn/" target="_blank" class="ref-card">
+                        <span class="ref-badge">Báo Chính phủ</span>
+                        <div class="ref-info">
+                            <span class="ref-title">Báo Điện tử Chính phủ nước CỘNG HÒA XHCN Việt Nam</span>
+                            <span class="ref-source">baochinhphu.vn</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
+
     <!-- Footer -->
     <footer>
-        <p><strong>Dự Án Học Tập FPT Schools - Tri Ân Lịch Sử Việt Nam</strong></p>
+        <p><strong>Dự Án Học Tập Môn Lịch Sử FPT Schools Tây Hà Nội</strong></p>
         <p>Sản phẩm số phục vụ học tập & lan tỏa ý nghĩa lịch sử ngày 02/09/1945.</p>
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">&copy; 2026 FPT Schools. All rights reserved.</p>
     </footer>
+
     <!-- JavaScript Interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -954,6 +975,7 @@
                     }
                 });
             });
+
             // Timeline Scroll Animation
             const timelineItems = document.querySelectorAll('.timeline-item');
             const observer = new IntersectionObserver(entries => {
@@ -964,28 +986,13 @@
                 });
             }, { threshold: 0.2 });
             timelineItems.forEach(item => observer.observe(item));
-            // Stat Numbers Counter
-            const statNumbers = document.querySelectorAll('.stat-number[data-target]');
-            statNumbers.forEach(stat => {
-                const target = +stat.getAttribute('data-target');
-                let count = 0;
-                const speed = target / 50;
-                const updateCount = () => {
-                    count += speed;
-                    if (count < target) {
-                        stat.innerText = Math.ceil(count).toLocaleString('vi-VN') + '+';
-                        setTimeout(updateCount, 30);
-                    } else {
-                        stat.innerText = target.toLocaleString('vi-VN') + (target === 80 ? ' Năm+' : '+');
-                    }
-                };
-                updateCount();
-            });
         });
+
         // Quiz Logic
         let score = 0;
         let answeredCount = 0;
         const totalQuestions = 5;
+
         function checkAnswer(event, button, isCorrect, feedbackMsg) {
             const circle = document.createElement('span');
             const diameter = Math.max(button.clientWidth, button.clientHeight);
@@ -998,13 +1005,16 @@
             const existingRipple = button.querySelector('.ripple');
             if (existingRipple) { existingRipple.remove(); }
             button.appendChild(circle);
+
             const parent = button.parentElement;
             const options = parent.querySelectorAll('.quiz-option');
             const feedback = parent.parentElement.querySelector('.feedback-text');
+
             options.forEach(opt => {
                 opt.disabled = true;
                 if (opt !== button) { opt.classList.add('dimmed'); }
             });
+
             if (isCorrect) {
                 button.classList.add('correct');
                 feedback.style.color = '#155724';
@@ -1021,13 +1031,16 @@
                     }
                 });
             }
+
             feedback.innerText = feedbackMsg;
             feedback.style.display = 'block';
+
             answeredCount++;
             if (answeredCount === totalQuestions) {
                 setTimeout(showResult, 600);
             }
         }
+
         function showResult() {
             const resultBox = document.getElementById('result-box');
             const resultText = document.getElementById('result-text');
@@ -1044,6 +1057,7 @@
                 behavior: 'smooth'
             });
         }
+
         function copyShareLink() {
             const shareText = `Tôi vừa đạt ${score}/${totalQuestions} điểm thử thách Lịch sử Quốc Khánh 02/09 trên FPT Schools! Hãy thử sức tại đây: ${window.location.href}`;
             navigator.clipboard.writeText(shareText).then(() => {
