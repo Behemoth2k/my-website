@@ -130,7 +130,6 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-
         /* --- HERO SECTION --- */
         .hero {
             position: relative;
@@ -202,7 +201,6 @@
             font-style: italic;
             text-shadow: 0 2px 5px rgba(0,0,0,0.4);
         }
-
         /* --- NÚT PHÁT ÂM THANH GỌN GÀNG (TÍCH HỢP ICON NỐT NHẠC) --- */
         .audio-btn {
             background: linear-gradient(45deg, #f36f21, #ff8c42);
@@ -228,7 +226,6 @@
             background: linear-gradient(45deg, #2e7d32, #4caf50);
             box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
         }
-
         /* --- MAIN CONTAINER --- */
         .container {
             max-width: 1050px;
@@ -752,7 +749,6 @@
             font-size: 0.95rem;
             margin: 0;
         }
-
         .share-btn {
             padding: 14px 28px;
             border-radius: 30px;
@@ -944,6 +940,8 @@
     </style>
 </head>
 <body>
+    <!-- Thẻ Audio bổ sung để nút bấm hoạt động -->
+    <audio id="declarationAudio" src="https://upload.wikimedia.org/wikipedia/commons/transcoded/8/87/Tuyen_ngon_Doc_lap_Nuoc_VDCH_2-9-1945.ogg/Tuyen_ngon_Doc_lap_Nuoc_VDCH_2-9-1945.ogg.mp3" preload="auto"></audio>
 
     <!-- Header / Navbar -->
     <header>
@@ -966,7 +964,6 @@
             </ul>
         </nav>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -980,7 +977,6 @@
                 <span id="audioIcon">🎵</span>
                 <span id="audioText">BÁC HỒ ĐỌC TUYÊN NGÔN ĐỘC LẬP (02/09/1945)</span>
             </button>
-
             <!-- Nhúng phát nhạc trực tiếp từ Spotify -->
 <div style="margin: 20px 0; text-align: center;">
     <iframe style="border-radius:12px" 
@@ -995,7 +991,6 @@
 </div>
         </div>
     </section>
-
     <!-- Main Container -->
     <main class="container">
         <!-- Thống kê con số lịch sử -->
@@ -1205,7 +1200,6 @@
                     Gửi niềm tự hào
                 </button>
             </form>
-
             <!-- Khu vực hiển thị danh sách lời chúc -->
             <div id="wishes-list" class="wishes-list"></div>
         </section>
@@ -1249,7 +1243,6 @@
             </div>
         </section>
     </main>
-
     <!-- Custom Modal Popup -->
     <div class="modal-overlay" id="customModal">
         <div class="modal-box">
@@ -1265,14 +1258,12 @@
             <button class="modal-btn" onclick="closeModal()">Đóng</button>
         </div>
     </div>
-
     <!-- Footer -->
     <footer>
         <p><strong>Dự Án Học Tập Môn Lịch Sử FPT Schools Tây Hà Nội</strong></p>
         <p>Sản phẩm số phục vụ học tập & lan tỏa ý nghĩa lịch sử ngày 02/09/1945.</p>
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">&copy; 2026 FPT Schools. All rights reserved.</p>
     </footer>
-
     <!-- JavaScript Interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1295,7 +1286,6 @@
                     }
                 });
             });
-
             // Timeline Scroll Animation
             const timelineItems = document.querySelectorAll('.timeline-item');
             const observer = new IntersectionObserver(entries => {
@@ -1307,13 +1297,11 @@
             }, { threshold: 0.2 });
             timelineItems.forEach(item => observer.observe(item));
         });
-
         // Xử lý bật/tắt phát âm thanh Bác Hồ đọc Tuyên ngôn Độc lập
         function toggleAudio() {
             const audio = document.getElementById('declarationAudio');
             const btn = document.getElementById('audioToggleBtn');
             const icon = document.getElementById('audioIcon');
-
             if (audio.paused) {
                 audio.play();
                 btn.classList.add('playing');
@@ -1324,7 +1312,6 @@
                 icon.innerText = '🎵';
             }
         }
-
         // Tự động chuyển icon về ban đầu khi phát hết bài
         document.getElementById('declarationAudio').addEventListener('ended', function() {
             const btn = document.getElementById('audioToggleBtn');
@@ -1332,7 +1319,6 @@
             btn.classList.remove('playing');
             icon.innerText = '🎵';
         });
-
         // Hàm bật Popup tùy chỉnh
         function showModal(message) {
             document.getElementById('modalMessage').innerText = message;
@@ -1349,7 +1335,6 @@
             const name = inputs[0].value;
             const location = inputs[1].value;
             const message = inputs[2].value;
-
             // Tạo phần tử hiển thị card lời chúc
             const wishItem = document.createElement('div');
             wishItem.className = 'wish-item';
@@ -1357,14 +1342,11 @@
                 <div class="wish-header">${name} (${location})</div>
                 <p class="wish-text">${message}</p>
             `;
-
             // Thêm vào đầu danh sách
             document.getElementById('wishes-list').prepend(wishItem);
-
             showModal('Cảm ơn bạn đã gửi thông điệp và niềm tự hào!');
             e.target.reset();
         }
-
         // Quiz Logic
         let score = 0;
         let answeredCount = 0;
