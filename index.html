@@ -47,7 +47,6 @@
             border-bottom-style: solid;
             background-color: rgba(243, 111, 33, 0.08);
         }
-
         /* --- HEADER & NAVIGATION --- */
         header {
             background-color: rgba(255, 255, 255, 0.95);
@@ -124,7 +123,6 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-
         /* --- HERO SECTION --- */
         .hero {
             position: relative;
@@ -213,7 +211,6 @@
             box-shadow: 0 10px 25px rgba(243, 111, 33, 0.6);
             background: linear-gradient(45deg, #ff8c42, #f36f21);
         }
-
         /* --- MAIN CONTAINER --- */
         .container {
             max-width: 1050px;
@@ -236,7 +233,6 @@
             display: block;
             margin-top: 5px;
         }
-
         /* --- STATS SECTION --- */
         .stats-grid {
             display: grid;
@@ -276,7 +272,6 @@
             color: #555;
             font-weight: 600;
         }
-
         /* --- INTRO & QUOTE --- */
         .intro-grid {
             display: grid;
@@ -339,7 +334,6 @@
             color: #f36f21;
             text-align: right;
         }
-
         /* --- TIMELINE --- */
         .timeline {
             position: relative;
@@ -420,7 +414,10 @@
         .timeline-item.right .content-box h3 {
             text-align: left;
         }
-
+        .highlight-red {
+            color: #D32F2F;
+            font-weight: 700;
+        }
         /* --- CARDS GRID --- */
         .cards-grid {
             display: grid;
@@ -454,7 +451,6 @@
             margin-bottom: 12px;
             color: #1a1a1a;
         }
-
         /* --- WISH FORM STYLES --- */
         .wish-section {
             background: #ffffff;
@@ -513,7 +509,6 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(211, 47, 47, 0.45);
         }
-
         /* --- QUIZ SECTION --- */
         .quiz-section {
             background: #ffffff;
@@ -659,7 +654,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
         }
-
         /* --- REFERENCES SECTION --- */
         .references-section {
             background: #ffffff;
@@ -734,7 +728,6 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-
         /* --- CUSTOM MODAL STYLES --- */
         .modal-overlay {
             position: fixed;
@@ -800,7 +793,6 @@
         .modal-btn:hover {
             transform: scale(1.05);
         }
-
         /* --- FOOTER --- */
         footer {
             background: #181818;
@@ -812,7 +804,6 @@
             border-top: 4px solid #f36f21;
         }
         footer p { margin-bottom: 6px; }
-
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
@@ -853,7 +844,6 @@
             </ul>
         </nav>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -864,7 +854,6 @@
             <a href="#gioi-thieu" class="btn">DẤU ẤN NGÀY 2/9</a>
         </div>
     </section>
-
     <!-- Main Container -->
     <main class="container">
         <!-- Thống kê con số lịch sử -->
@@ -884,7 +873,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Giới thiệu & Bối cảnh -->
         <section id="gioi-thieu">
             <h2 class="section-title">BỐI CẢNH LỊCH SỬ</h2>
@@ -906,7 +894,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Diễn biến timeline -->
         <section id="dien-bien">
             <h2 class="section-title">HÀNH TRÌNH ĐẾN NGÀY ĐỘC LẬP</h2>
@@ -938,12 +925,11 @@
                 <div class="timeline-item left">
                     <div class="content-box">
                         <h3>14 GIỜ, 2/9/1945</h3>
-                        <p><strong>TUYÊN BỐ NỀN ĐỘC LẬP:</strong> Tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh thay mặt Chính phủ lâm thời đọc <a href="https://baotanglichsu.vn/vi/Articles/3097/19484/tuyen-ngon-djoc-lap-2-9-1945-ban-tuyen-bo-ve-nhan-quyen-o-viet-nam.html" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, tuyên bố sự ra đời của nước Việt Nam Dân chủ Cộng hòa.</p>
+                        <p><strong>Tuyên Bố Nền Độc Lập:</strong> Tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh thay mặt Chính phủ lâm thời đọc <a href="https://baotanglichsu.vn/vi/Articles/3097/19484/tuyen-ngon-djoc-lap-2-9-1945-ban-tuyen-bo-ve-nhan-quyen-o-viet-nam.html" target="_blank" class="wiki-link">Tuyên ngôn Độc lập</a>, tuyên bố sự ra đời của nước <span class="highlight-red">Việt Nam Dân chủ Cộng hòa</span>.</p>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- Ý nghĩa & Di sản -->
         <section id="y-nghia">
             <h2 class="section-title">Ý NGHĨA LỊCH SỬ VÀ GIÁ TRỊ TIẾP NỐI</h2>
@@ -952,8 +938,8 @@
                     <div class="card-icon">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" alt="Cờ Việt Nam" style="width: 38px; height: auto; border-radius: 3px; display: inline-block; vertical-align: middle;">
                     </div>
-                    <h3>Khai Sinh nước Việt Nam Dân Chủ Cộng Hòa</h3>
-                    <p>Nước Việt Nam Dân chủ Cộng hòa ra đời, đưa nhân dân Việt Nam từ thân phận nô lệ trở thành người làm chủ đất nước. Ngày nay là nước Cộng hòa xã hội chủ nghĩa Việt Nam.</p>
+                    <h3>Khai sinh nước Việt Nam Dân chủ Cộng hòa</h3>
+                    <p>Nước Việt Nam Dân chủ Cộng hòa ra đời, đưa nhân dân Việt Nam trở thành người làm chủ đất nước. Ngày nay là nước Cộng hòa xã hội chủ nghĩa Việt Nam.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🕊️</div>
@@ -967,7 +953,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Form Gửi Lời Chúc & Thắp Nến -->
         <section id="loi-chuc" class="wish-section">
             <h2 class="section-title">TRI ÂN & TRI THỨC TIẾP NỐI</h2>
@@ -981,7 +966,6 @@
                 <button type="submit" class="wish-submit-btn">🕯️ Gửi Lời Chúc & Thắp Nến</button>
             </form>
         </section>
-
         <!-- Câu hỏi tương tác / Quiz -->
         <section id="trac-nghiem">
             <h2 class="section-title">NHỚ VỀ MÙA THU 1945</h2>
@@ -1050,7 +1034,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Tài liệu tham khảo -->
         <section id="tai-lieu">
             <h2 class="section-title">TÀI LIỆU THAM KHẢO</h2>
@@ -1089,7 +1072,6 @@
             </div>
         </section>
     </main>
-
     <!-- Custom Modal Popup thay thế cho alert() -->
     <div class="modal-overlay" id="customModal">
         <div class="modal-box">
@@ -1099,14 +1081,12 @@
             <button class="modal-btn" onclick="closeModal()">Đóng</button>
         </div>
     </div>
-
     <!-- Footer -->
     <footer>
         <p><strong>Dự Án Học Tập Môn Lịch Sử FPT Schools Tây Hà Nội</strong></p>
         <p>Sản phẩm số phục vụ học tập & lan tỏa ý nghĩa lịch sử ngày 02/09/1945.</p>
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">&copy; 2026 FPT Schools. All rights reserved.</p>
     </footer>
-
     <!-- JavaScript Interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1129,7 +1109,6 @@
                     }
                 });
             });
-
             // Timeline Scroll Animation
             const timelineItems = document.querySelectorAll('.timeline-item');
             const observer = new IntersectionObserver(entries => {
@@ -1141,30 +1120,25 @@
             }, { threshold: 0.2 });
             timelineItems.forEach(item => observer.observe(item));
         });
-
         // Hàm bật Popup tùy chỉnh
         function showModal(message) {
             document.getElementById('modalMessage').innerText = message;
             document.getElementById('customModal').classList.add('active');
         }
-
         // Hàm đóng Popup
         function closeModal() {
             document.getElementById('customModal').classList.remove('active');
         }
-
         // Xử lý Form Lời Chúc
         function handleWishSubmit(e) {
             e.preventDefault();
             showModal('Cảm ơn bạn đã gửi lời chúc tri ân và thắp nến thành công!');
             e.target.reset();
         }
-
         // Quiz Logic
         let score = 0;
         let answeredCount = 0;
         const totalQuestions = 5;
-
         function checkAnswer(event, button, isCorrect, feedbackMsg) {
             const circle = document.createElement('span');
             const diameter = Math.max(button.clientWidth, button.clientHeight);
@@ -1177,16 +1151,13 @@
             const existingRipple = button.querySelector('.ripple');
             if (existingRipple) { existingRipple.remove(); }
             button.appendChild(circle);
-
             const parent = button.parentElement;
             const options = parent.querySelectorAll('.quiz-option');
             const feedback = parent.parentElement.querySelector('.feedback-text');
-
             options.forEach(opt => {
                 opt.disabled = true;
                 if (opt !== button) { opt.classList.add('dimmed'); }
             });
-
             if (isCorrect) {
                 button.classList.add('correct');
                 feedback.style.color = '#155724';
@@ -1203,16 +1174,13 @@
                     }
                 });
             }
-
             feedback.innerText = feedbackMsg;
             feedback.style.display = 'block';
-
             answeredCount++;
             if (answeredCount === totalQuestions) {
                 setTimeout(showResult, 600);
             }
         }
-
         function showResult() {
             const resultBox = document.getElementById('result-box');
             const resultText = document.getElementById('result-text');
@@ -1229,7 +1197,6 @@
                 behavior: 'smooth'
             });
         }
-
         // Sao chép link kết quả
         function copyShareLink() {
             const shareText = `Tôi vừa đạt ${score}/${totalQuestions} điểm thử thách Lịch sử Quốc Khánh 02/09 trên FPT Schools! Hãy thử sức tại đây: ${window.location.href}`;
