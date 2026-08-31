@@ -23,7 +23,7 @@
             line-height: 1.8;
             overflow-x: hidden;
         }
-        h1, h2, h3, h4, .logo, .nav-links a, .quiz-option, .quiz-btn, .share-btn, .stat-number, .ref-link, .wish-input, .wish-submit-btn, .modal-title, .modal-btn, .badge-title {
+        h1, h2, h3, h4, .logo, .nav-links a, .quiz-option, .quiz-btn, .share-btn, .stat-number, .ref-link, .wish-input, .wish-submit-btn, .modal-title, .modal-btn, .badge-title, .audio-btn {
             font-family: 'Montserrat', sans-serif;
         }
         a {
@@ -104,6 +104,7 @@
             display: flex;
             list-style: none;
             gap: 20px;
+            align-items: center;
         }
         .nav-links a {
             font-weight: 700;
@@ -129,6 +130,7 @@
         .nav-links a:hover::after {
             width: 100%;
         }
+
         /* --- HERO SECTION --- */
         .hero {
             position: relative;
@@ -136,7 +138,7 @@
                         url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             color: #ffffff;
             text-align: center;
-            padding: 120px 20px 100px;
+            padding: 100px 20px 80px;
             overflow: hidden;
             box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
         }
@@ -200,23 +202,33 @@
             font-style: italic;
             text-shadow: 0 2px 5px rgba(0,0,0,0.4);
         }
-        .btn {
+
+        /* --- NÚT PHÁT ÂM THANH GỌN GÀNG (TÍCH HỢP ICON NỐT NHẠC) --- */
+        .audio-btn {
             background: linear-gradient(45deg, #f36f21, #ff8c42);
             color: #ffffff;
             font-weight: 700;
-            padding: 14px 36px;
+            padding: 12px 28px;
             border-radius: 30px;
             box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             cursor: pointer;
             border: none;
+            font-size: 0.95rem;
         }
-        .btn:hover {
-            transform: translateY(-4px) scale(1.03);
+        .audio-btn:hover {
+            transform: translateY(-3px) scale(1.02);
             box-shadow: 0 10px 25px rgba(243, 111, 33, 0.6);
             background: linear-gradient(45deg, #ff8c42, #f36f21);
         }
+        .audio-btn.playing {
+            background: linear-gradient(45deg, #2e7d32, #4caf50);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
         /* --- MAIN CONTAINER --- */
         .container {
             max-width: 1050px;
@@ -649,7 +661,7 @@
             font-weight: 700;
             color: #4a0000;
         }
-        /* --- WISH FORM STYLES --- */
+        /* --- WISH FORM & WISH DISPLAY STYLES --- */
         .wish-section {
             background: #ffffff;
             border-radius: 20px;
@@ -714,6 +726,33 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(211, 47, 47, 0.45);
         }
+        .wishes-list {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .wish-item {
+            background: #fff8f5;
+            border-left: 4px solid #D32F2F;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            animation: fadeIn 0.4s ease;
+        }
+        .wish-header {
+            font-weight: 700;
+            color: #f36f21;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+        .wish-text {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
         .share-btn {
             padding: 14px 28px;
             border-radius: 30px;
@@ -893,6 +932,7 @@
             .form-row { grid-template-columns: 1fr; }
             .quiz-options { grid-template-columns: 1fr; }
             .references-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 10px; }
             
             .timeline::before { left: 20px; }
             .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
@@ -904,6 +944,7 @@
     </style>
 </head>
 <body>
+
     <!-- Header / Navbar -->
     <header>
         <nav class="navbar">
@@ -925,6 +966,7 @@
             </ul>
         </nav>
     </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -932,9 +974,28 @@
             <h1>NGÀY QUỐC KHÁNH NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h1>
             <div class="hero-time">2/9/1945 – 2/9/2026</div>
             <p>"Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thực đã thành một nước tự do, độc lập."</p>
-            <a href="#gioi-thieu" class="btn">DẤU ẤN NGÀY 2/9</a>
+            
+            <!-- Nút nốt nhạc phát/dừng âm thanh trực tiếp -->
+            <button class="audio-btn" id="audioToggleBtn" onclick="toggleAudio()">
+                <span id="audioIcon">🎵</span>
+                <span id="audioText">BÁC HỒ ĐỌC TUYÊN NGÔN ĐỘC LẬP (02/09/1945)</span>
+            </button>
+
+            <!-- Nhúng phát nhạc trực tiếp từ Spotify -->
+<div style="margin: 20px 0; text-align: center;">
+    <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/episode/38VJbC5rJJJM4ul6rY6CVO?utm_source=generator" 
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+</div>
         </div>
     </section>
+
     <!-- Main Container -->
     <main class="container">
         <!-- Thống kê con số lịch sử -->
@@ -1044,7 +1105,7 @@
         <section id="trac-nghiem">
             <div class="section-title-wrapper">
                 <h2 class="section-title">NHỚ VỀ MÙA THU 1945</h2>
-            </div>
+            </div>thay 
             <div class="quiz-section">
                 <!-- Câu 1 -->
                 <div class="quiz-card">
@@ -1144,6 +1205,9 @@
                     Gửi niềm tự hào
                 </button>
             </form>
+
+            <!-- Khu vực hiển thị danh sách lời chúc -->
+            <div id="wishes-list" class="wishes-list"></div>
         </section>
         <!-- Tài liệu tham khảo -->
         <section id="tai-lieu">
@@ -1185,6 +1249,7 @@
             </div>
         </section>
     </main>
+
     <!-- Custom Modal Popup -->
     <div class="modal-overlay" id="customModal">
         <div class="modal-box">
@@ -1200,12 +1265,14 @@
             <button class="modal-btn" onclick="closeModal()">Đóng</button>
         </div>
     </div>
+
     <!-- Footer -->
     <footer>
         <p><strong>Dự Án Học Tập Môn Lịch Sử FPT Schools Tây Hà Nội</strong></p>
         <p>Sản phẩm số phục vụ học tập & lan tỏa ý nghĩa lịch sử ngày 02/09/1945.</p>
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">&copy; 2026 FPT Schools. All rights reserved.</p>
     </footer>
+
     <!-- JavaScript Interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1228,6 +1295,7 @@
                     }
                 });
             });
+
             // Timeline Scroll Animation
             const timelineItems = document.querySelectorAll('.timeline-item');
             const observer = new IntersectionObserver(entries => {
@@ -1239,6 +1307,32 @@
             }, { threshold: 0.2 });
             timelineItems.forEach(item => observer.observe(item));
         });
+
+        // Xử lý bật/tắt phát âm thanh Bác Hồ đọc Tuyên ngôn Độc lập
+        function toggleAudio() {
+            const audio = document.getElementById('declarationAudio');
+            const btn = document.getElementById('audioToggleBtn');
+            const icon = document.getElementById('audioIcon');
+
+            if (audio.paused) {
+                audio.play();
+                btn.classList.add('playing');
+                icon.innerText = '⏸️';
+            } else {
+                audio.pause();
+                btn.classList.remove('playing');
+                icon.innerText = '🎵';
+            }
+        }
+
+        // Tự động chuyển icon về ban đầu khi phát hết bài
+        document.getElementById('declarationAudio').addEventListener('ended', function() {
+            const btn = document.getElementById('audioToggleBtn');
+            const icon = document.getElementById('audioIcon');
+            btn.classList.remove('playing');
+            icon.innerText = '🎵';
+        });
+
         // Hàm bật Popup tùy chỉnh
         function showModal(message) {
             document.getElementById('modalMessage').innerText = message;
@@ -1248,12 +1342,29 @@
         function closeModal() {
             document.getElementById('customModal').classList.remove('active');
         }
-        // Xử lý Form Lời Chúc
+        // Xử lý Form Lời Chúc & Thêm trực tiếp vào giao diện
         function handleWishSubmit(e) {
             e.preventDefault();
+            const inputs = e.target.querySelectorAll('.wish-input');
+            const name = inputs[0].value;
+            const location = inputs[1].value;
+            const message = inputs[2].value;
+
+            // Tạo phần tử hiển thị card lời chúc
+            const wishItem = document.createElement('div');
+            wishItem.className = 'wish-item';
+            wishItem.innerHTML = `
+                <div class="wish-header">${name} (${location})</div>
+                <p class="wish-text">${message}</p>
+            `;
+
+            // Thêm vào đầu danh sách
+            document.getElementById('wishes-list').prepend(wishItem);
+
             showModal('Cảm ơn bạn đã gửi thông điệp và niềm tự hào!');
             e.target.reset();
         }
+
         // Quiz Logic
         let score = 0;
         let answeredCount = 0;
