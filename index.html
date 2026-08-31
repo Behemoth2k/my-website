@@ -231,8 +231,20 @@
             position: relative;
             font-weight: 800;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
-        .section-title::after {
+        .section-title-wrapper {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .section-title-wrapper .section-title {
+            margin-bottom: 0;
+        }
+        .section-title-wrapper::after {
             content: '❖';
             font-size: 1.2rem;
             color: #f36f21;
@@ -457,7 +469,6 @@
             margin-bottom: 12px;
             color: #1a1a1a;
         }
-
         /* --- QUIZ SECTION --- */
         .quiz-section {
             background: #ffffff;
@@ -585,7 +596,6 @@
             margin-bottom: 12px;
             font-size: 1.6rem;
         }
-
         /* --- HUY HIỆU DANH DỰ (BADGE) --- */
         .badge-container {
             display: none;
@@ -639,7 +649,6 @@
             font-weight: 700;
             color: #4a0000;
         }
-
         /* --- WISH FORM STYLES --- */
         .wish-section {
             background: #ffffff;
@@ -648,6 +657,13 @@
             box-shadow: 0 10px 35px rgba(0,0,0,0.05);
             border: 1px solid rgba(243, 111, 33, 0.2);
             margin-bottom: 80px;
+        }
+        .title-flag {
+            width: 38px;
+            height: 26px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            vertical-align: middle;
         }
         .form-row {
             display: grid;
@@ -698,7 +714,6 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(211, 47, 47, 0.45);
         }
-
         .share-btn {
             padding: 14px 28px;
             border-radius: 30px;
@@ -717,7 +732,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(243, 111, 33, 0.4);
         }
-
         /* --- REFERENCES SECTION --- */
         .references-section {
             background: #ffffff;
@@ -792,7 +806,6 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-
         /* --- CUSTOM MODAL STYLES --- */
         .modal-overlay {
             position: fixed;
@@ -861,7 +874,6 @@
         .modal-btn:hover {
             transform: scale(1.05);
         }
-
         /* --- FOOTER --- */
         footer {
             background: #181818;
@@ -873,7 +885,6 @@
             border-top: 4px solid #f36f21;
         }
         footer p { margin-bottom: 6px; }
-
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
@@ -914,7 +925,6 @@
             </ul>
         </nav>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -925,7 +935,6 @@
             <a href="#gioi-thieu" class="btn">DẤU ẤN NGÀY 2/9</a>
         </div>
     </section>
-
     <!-- Main Container -->
     <main class="container">
         <!-- Thống kê con số lịch sử -->
@@ -945,10 +954,11 @@
                 </div>
             </div>
         </section>
-
         <!-- Giới thiệu & Bối cảnh -->
         <section id="gioi-thieu">
-            <h2 class="section-title">BỐI CẢNH LỊCH SỬ</h2>
+            <div class="section-title-wrapper">
+                <h2 class="section-title">BỐI CẢNH LỊCH SỬ</h2>
+            </div>
             <div class="intro-grid">
                 <div class="intro-text">
                     <p>Tháng 8 năm 1945, <a href="https://tulieuvankien.dangcongsan.vn/ho-so-su-kien-nhan-chung/su-kien-va-nhan-chung/chien-tranh-the-gioi-thu-hai-1939-1945-3354" target="_blank" class="wiki-link">Chiến tranh thế giới thứ hai</a> bước vào giai đoạn kết thúc. Ngày 15/8/1945, Nhật Bản tuyên bố đầu hàng Đồng minh vô điều kiện. Ở Đông Dương, quân Nhật rệu rã, Chính phủ Trần Trọng Kim hoang mang; thời cơ thuận lợi cho Tổng khởi nghĩa giành chính quyền đã xuất hiện.</p>
@@ -967,10 +977,11 @@
                 </div>
             </div>
         </section>
-
         <!-- Diễn biến timeline -->
         <section id="dien-bien">
-            <h2 class="section-title">HÀNH TRÌNH ĐẾN NGÀY ĐỘC LẬP</h2>
+            <div class="section-title-wrapper">
+                <h2 class="section-title">HÀNH TRÌNH ĐẾN NGÀY ĐỘC LẬP</h2>
+            </div>
             <div class="timeline">
                 <div class="timeline-item left">
                     <div class="content-box">
@@ -1004,10 +1015,11 @@
                 </div>
             </div>
         </section>
-
         <!-- Ý nghĩa & Di sản -->
         <section id="y-nghia">
-            <h2 class="section-title">Ý NGHĨA LỊCH SỬ VÀ GIÁ TRỊ TIẾP NỐI</h2>
+            <div class="section-title-wrapper">
+                <h2 class="section-title">Ý NGHĨA LỊCH SỬ VÀ GIÁ TRỊ TIẾP NỐI</h2>
+            </div>
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon">
@@ -1028,10 +1040,11 @@
                 </div>
             </div>
         </section>
-
         <!-- Câu hỏi tương tác / Quiz -->
         <section id="trac-nghiem">
-            <h2 class="section-title">NHỚ VỀ MÙA THU 1945</h2>
+            <div class="section-title-wrapper">
+                <h2 class="section-title">NHỚ VỀ MÙA THU 1945</h2>
+            </div>
             <div class="quiz-section">
                 <!-- Câu 1 -->
                 <div class="quiz-card">
@@ -1088,7 +1101,6 @@
                     </div>
                     <div class="feedback-text"></div>
                 </div>
-
                 <!-- Kết quả Quiz -->
                 <div class="quiz-result-box" id="result-box">
                     <h3 id="result-title">🎉 Chúc mừng bạn đã hoàn thành!</h3>
@@ -1098,26 +1110,32 @@
                     <div class="badge-container" id="badge-box">
                         <div class="badge-card">
                             <div class="badge-icon">🏅</div>
-                            <div class="badge-title">HUY HIỆU DANH DỰ</div>
+                            <div class="badge-title">HUY HIỆU TRỌN NIỀM TỰ HÀO</div>
                             <div class="badge-sub">Am Tường Lịch Sử Dân Tộc</div>
                         </div>
                     </div>
-
-                    <p style="margin-top: 10px; font-weight: 600; color: #555;">Hãy thách thức bạn bè thử sức ngay nào!</p>
+                    <p style="margin-top: 10px; font-weight: 600; color: #555;">Hãy cùng bạn bè thử sức ngay nào!</p>
                     <button class="share-btn" onclick="copyShareLink()">📋 Sao Chép Link Kết Quả</button>
                 </div>
             </div>
         </section>
-
         <!-- Form Gửi Lời Chúc -->
         <section id="loi-chuc" class="wish-section">
-            <h2 class="section-title">THÔNG ĐIỆP TỪ TRÁI TIM</h2>
+            <div class="section-title-wrapper">
+                <h2 class="section-title">
+                    <svg class="vn-flag-icon title-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+                        <rect width="300" height="200" fill="#da251d"/>
+                        <polygon points="150,40 163,80 205,80 171,105 184,145 150,120 116,145 129,105 95,80 137,80" fill="#ffff00"/>
+                    </svg>
+                    THÔNG ĐIỆP TỪ TRÁI TIM
+                </h2>
+            </div>
             <form onsubmit="handleWishSubmit(event)">
                 <div class="form-row">
                     <input type="text" class="wish-input" placeholder="Tên..." required>
                     <input type="text" class="wish-input" placeholder="Nơi sinh sống..." required>
                 </div>
-                <textarea class="wish-input wish-textarea" placeholder="Một lời chúc, một niềm tự hào, một lời tri ân — điều bạn..." required></textarea>
+                <textarea class="wish-input wish-textarea" placeholder="Một lời chúc, một niềm tri ân, điều bạn tự hào ......." required></textarea>
                 <button type="submit" class="wish-submit-btn">
                     <svg class="vn-flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="24" height="16">
                         <rect width="300" height="200" fill="#da251d"/>
@@ -1127,10 +1145,11 @@
                 </button>
             </form>
         </section>
-
         <!-- Tài liệu tham khảo -->
         <section id="tai-lieu">
-            <h2 class="section-title">TÀI LIỆU THAM KHẢO</h2>
+            <div class="section-title-wrapper">
+                <h2 class="section-title">TÀI LIỆU THAM KHẢO</h2>
+            </div>
             <div class="references-section">
                 <p style="font-size: 0.95rem; color: #555;">Tư liệu lịch sử và nội dung trên website được tổng hợp, đối chiếu từ Sách giáo khoa và các nguồn báo chí chính thống của Nhà nước Việt Nam:</p>
                 <div class="references-grid">
@@ -1166,7 +1185,6 @@
             </div>
         </section>
     </main>
-
     <!-- Custom Modal Popup -->
     <div class="modal-overlay" id="customModal">
         <div class="modal-box">
@@ -1182,14 +1200,12 @@
             <button class="modal-btn" onclick="closeModal()">Đóng</button>
         </div>
     </div>
-
     <!-- Footer -->
     <footer>
         <p><strong>Dự Án Học Tập Môn Lịch Sử FPT Schools Tây Hà Nội</strong></p>
         <p>Sản phẩm số phục vụ học tập & lan tỏa ý nghĩa lịch sử ngày 02/09/1945.</p>
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">&copy; 2026 FPT Schools. All rights reserved.</p>
     </footer>
-
     <!-- JavaScript Interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1212,7 +1228,6 @@
                     }
                 });
             });
-
             // Timeline Scroll Animation
             const timelineItems = document.querySelectorAll('.timeline-item');
             const observer = new IntersectionObserver(entries => {
@@ -1224,30 +1239,25 @@
             }, { threshold: 0.2 });
             timelineItems.forEach(item => observer.observe(item));
         });
-
         // Hàm bật Popup tùy chỉnh
         function showModal(message) {
             document.getElementById('modalMessage').innerText = message;
             document.getElementById('customModal').classList.add('active');
         }
-
         // Hàm đóng Popup
         function closeModal() {
             document.getElementById('customModal').classList.remove('active');
         }
-
         // Xử lý Form Lời Chúc
         function handleWishSubmit(e) {
             e.preventDefault();
             showModal('Cảm ơn bạn đã gửi thông điệp và niềm tự hào!');
             e.target.reset();
         }
-
         // Quiz Logic
         let score = 0;
         let answeredCount = 0;
         const totalQuestions = 5;
-
         function checkAnswer(event, button, isCorrect, feedbackMsg) {
             const circle = document.createElement('span');
             const diameter = Math.max(button.clientWidth, button.clientHeight);
@@ -1260,16 +1270,13 @@
             const existingRipple = button.querySelector('.ripple');
             if (existingRipple) { existingRipple.remove(); }
             button.appendChild(circle);
-
             const parent = button.parentElement;
             const options = parent.querySelectorAll('.quiz-option');
             const feedback = parent.parentElement.querySelector('.feedback-text');
-
             options.forEach(opt => {
                 opt.disabled = true;
                 if (opt !== button) { opt.classList.add('dimmed'); }
             });
-
             if (isCorrect) {
                 button.classList.add('correct');
                 feedback.style.color = '#155724';
@@ -1286,16 +1293,13 @@
                     }
                 });
             }
-
             feedback.innerText = feedbackMsg;
             feedback.style.display = 'block';
-
             answeredCount++;
             if (answeredCount === totalQuestions) {
                 setTimeout(showResult, 600);
             }
         }
-
         function showResult() {
             const resultBox = document.getElementById('result-box');
             const resultText = document.getElementById('result-text');
@@ -1309,7 +1313,6 @@
             } else {
                 badgeBox.style.display = 'none';
             }
-
             resultBox.style.display = 'block';
             
             const header = document.querySelector('header');
@@ -1321,7 +1324,6 @@
                 behavior: 'smooth'
             });
         }
-
         // Sao chép link kết quả
         function copyShareLink() {
             const shareText = `Tôi vừa đạt ${score}/${totalQuestions} điểm thử thách Lịch sử Quốc Khánh 02/09 trên FPT Schools! Hãy thử sức tại đây: ${window.location.href}`;
