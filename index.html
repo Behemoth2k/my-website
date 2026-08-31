@@ -130,34 +130,62 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-        /* --- HERO SECTION --- */
+
+        /* --- HERO SECTION VỚI VIDEO NỀN YOUTUBE --- */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(186, 24, 27, 0.92), rgba(102, 7, 8, 0.95)), 
-                        url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background: none !important; /* Gỡ bỏ nền đỏ tĩnh cũ */
             color: #ffffff;
             text-align: center;
             padding: 100px 20px 80px;
             overflow: hidden;
             box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
         }
-        .hero::before {
-            content: '★';
+
+        /* Khung chứa iframe YouTube bọc kín phần hero */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none; /* Giúp người dùng không click nhầm vào video */
+        }
+
+        /* Phóng to và căn giữa iframe để lấp đầy khoảng trống màn hình */
+        .video-background iframe {
             position: absolute;
             top: 50%;
             left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* Tỷ lệ chuẩn 16:9 */
+            min-height: 100vh;
+            min-width: 177.77vh;
             transform: translate(-50%, -50%);
-            font-size: 25rem;
-            color: rgba(255, 205, 0, 0.05);
-            pointer-events: none;
-            user-select: none;
         }
+
+        /* Lớp phủ màu đỏ bán trong suốt giúp chữ tiêu đề hiển thị nổi bật và dễ đọc hơn */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(186, 24, 27, 0.70), rgba(102, 7, 8, 0.80));
+            z-index: 2;
+            pointer-events: none;
+        }
+
         .hero-content {
             max-width: 850px;
             margin: 0 auto;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
+
         .hero-badge {
             background: linear-gradient(45deg, #ffcd00, #ffaa00);
             color: #8b0000;
@@ -942,7 +970,6 @@
 <body>
     <!-- Thẻ Audio bổ sung để nút bấm hoạt động -->
     <audio id="declarationAudio" src="https://upload.wikimedia.org/wikipedia/commons/transcoded/8/87/Tuyen_ngon_Doc_lap_Nuoc_VDCH_2-9-1945.ogg/Tuyen_ngon_Doc_lap_Nuoc_VDCH_2-9-1945.ogg.mp3" preload="auto"></audio>
-
     <!-- Header / Navbar -->
     <header>
         <nav class="navbar">
@@ -964,8 +991,20 @@
             </ul>
         </nav>
     </header>
-    <!-- Hero Section -->
+
+    <!-- Hero Section với Video YouTube làm nền động -->
     <section class="hero">
+        <!-- Nhúng video YouTube làm nền động -->
+        <div class="video-background">
+            <iframe 
+                src="https://www.youtube.com/embed/o_wjnL09aYw?autoplay=1&mute=1&loop=1&playlist=o_wjnL09aYw&controls=0&showinfo=0&autohide=1&modestbranding=1&disablekb=1" 
+                title="Waving Vietnam Flag" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
         <div class="hero-content">
             <span class="hero-badge">MÙA THU ĐỘC LẬP</span>
             <h1>NGÀY QUỐC KHÁNH NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h1>
@@ -977,20 +1016,22 @@
                 <span id="audioIcon">🎵</span>
                 <span id="audioText">BÁC HỒ ĐỌC TUYÊN NGÔN ĐỘC LẬP (02/09/1945)</span>
             </button>
+            
             <!-- Nhúng phát nhạc trực tiếp từ Spotify -->
-<div style="margin: 20px 0; text-align: center;">
-    <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/episode/38VJbC5rJJJM4ul6rY6CVO?utm_source=generator" 
-            width="100%" 
-            height="152" 
-            frameBorder="0" 
-            allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy">
-    </iframe>
-</div>
+            <div style="margin: 20px 0; text-align: center;">
+                <iframe style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/episode/38VJbC5rJJJM4ul6rY6CVO?utm_source=generator" 
+                        width="100%" 
+                        height="152" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                </iframe>
+            </div>
         </div>
     </section>
+
     <!-- Main Container -->
     <main class="container">
         <!-- Thống kê con số lịch sử -->
