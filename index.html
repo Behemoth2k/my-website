@@ -17,8 +17,9 @@
         body {
             font-family: 'Merriweather', serif;
             color: #2b2b2b;
-            background-color: #fdfbf7;
-            background-image: radial-gradient(#e5d9c5 0.75px, transparent 0.75px);
+            /* Đã chuyển nền thành màu ngả vàng dịu dễ nhìn, ấm áp */
+            background-color: #f6f0e2;
+            background-image: radial-gradient(#e2d5bd 0.75px, transparent 0.75px);
             background-size: 24px 24px;
             line-height: 1.8;
             overflow-x: hidden;
@@ -55,7 +56,7 @@
         }
         /* --- HEADER & NAVIGATION --- */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(246, 240, 226, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             position: sticky;
@@ -85,7 +86,7 @@
         .logo-text {
             display: flex;
             flex-direction: column;
-            border-left: 2px solid #e0e0e0;
+            border-left: 2px solid #dcd3be;
             padding-left: 10px;
         }
         .school-name {
@@ -130,19 +131,16 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-
         /* --- HERO SECTION VỚI VIDEO NỀN YOUTUBE --- */
         .hero {
             position: relative;
-            background: none !important; /* Gỡ bỏ nền đỏ tĩnh cũ */
+            background: none !important;
             color: #ffffff;
             text-align: center;
             padding: 100px 20px 80px;
             overflow: hidden;
             box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
         }
-
-        /* Khung chứa iframe YouTube bọc kín phần hero */
         .video-background {
             position: absolute;
             top: 0;
@@ -151,22 +149,18 @@
             height: 100%;
             z-index: 1;
             overflow: hidden;
-            pointer-events: none; /* Giúp người dùng không click nhầm vào video */
+            pointer-events: none;
         }
-
-        /* Phóng to và căn giữa iframe để lấp đầy khoảng trống màn hình */
         .video-background iframe {
             position: absolute;
             top: 50%;
             left: 50%;
             width: 100vw;
-            height: 56.25vw; /* Tỷ lệ chuẩn 16:9 */
+            height: 56.25vw;
             min-height: 100vh;
             min-width: 177.77vh;
             transform: translate(-50%, -50%);
         }
-
-        /* Lớp phủ màu đỏ bán trong suốt giúp chữ tiêu đề hiển thị nổi bật và dễ đọc hơn */
         .hero::before {
             content: '';
             position: absolute;
@@ -178,14 +172,12 @@
             z-index: 2;
             pointer-events: none;
         }
-
         .hero-content {
             max-width: 850px;
             margin: 0 auto;
             position: relative;
             z-index: 3;
         }
-
         .hero-badge {
             background: linear-gradient(45deg, #ffcd00, #ffaa00);
             color: #8b0000;
@@ -229,7 +221,7 @@
             font-style: italic;
             text-shadow: 0 2px 5px rgba(0,0,0,0.4);
         }
-        /* --- NÚT PHÁT ÂM THANH GỌN GÀNG (TÍCH HỢP ICON NỐT NHẠC) --- */
+        /* --- NÚT PHÁT ÂM THANH GỌN GÀNG --- */
         .audio-btn {
             background: linear-gradient(45deg, #f36f21, #ff8c42);
             color: #ffffff;
@@ -296,7 +288,7 @@
             margin-bottom: 80px;
         }
         .stat-card {
-            background: #ffffff;
+            background: #faf5ea;
             border-radius: 16px;
             padding: 30px 20px;
             text-align: center;
@@ -355,11 +347,11 @@
             color: #666;
             text-align: center;
             font-style: italic;
-            background: #ffffff;
-            border-top: 1px solid #eee;
+            background: #faf5ea;
+            border-top: 1px solid #ebdcc4;
         }
         .quote-card {
-            background: linear-gradient(135deg, #ffffff, #fff8f5);
+            background: linear-gradient(135deg, #faf5ea, #f4ecd9);
             border-left: 6px solid #f36f21;
             padding: 30px;
             border-radius: 0 16px 16px 0;
@@ -448,7 +440,7 @@
         }
         .content-box {
             padding: 22px;
-            background: #ffffff;
+            background: #faf5ea;
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.06);
             border-top: 3px solid #f36f21;
@@ -481,7 +473,7 @@
             margin-bottom: 80px;
         }
         .card {
-            background-color: #ffffff;
+            background-color: #faf5ea;
             padding: 35px 25px;
             border-radius: 16px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.05);
@@ -497,7 +489,7 @@
             font-size: 2.5rem;
             margin-bottom: 18px;
             display: inline-block;
-            background: #fff8f5;
+            background: #f0e6d2;
             padding: 12px;
             border-radius: 12px;
         }
@@ -508,7 +500,7 @@
         }
         /* --- QUIZ SECTION --- */
         .quiz-section {
-            background: #ffffff;
+            background: #faf5ea;
             border-radius: 20px;
             padding: 45px;
             box-shadow: 0 10px 35px rgba(0,0,0,0.08);
@@ -519,7 +511,7 @@
         .quiz-card {
             margin-bottom: 35px;
             padding-bottom: 30px;
-            border-bottom: 1px dashed #e0e0e0;
+            border-bottom: 1px dashed #ebdcc4;
         }
         .quiz-card:last-child {
             border-bottom: none;
@@ -540,8 +532,8 @@
         .quiz-option {
             position: relative;
             overflow: hidden;
-            background-color: #fcfcfc;
-            border: 2px solid #eaeaea;
+            background-color: #f4ece0;
+            border: 2px solid #e2d5bd;
             padding: 16px 20px;
             border-radius: 12px;
             cursor: pointer;
@@ -554,7 +546,7 @@
         }
         .quiz-option:hover:not(:disabled) {
             border-color: #f36f21;
-            background-color: #fff8f5;
+            background-color: #ede2cc;
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(243, 111, 33, 0.15);
         }
@@ -616,7 +608,7 @@
         .quiz-result-box {
             display: none;
             text-align: center;
-            background: linear-gradient(135deg, #ffffff, #fff8f5);
+            background: linear-gradient(135deg, #faf5ea, #f0e6d2);
             border: 2px dashed #f36f21;
             padding: 35px;
             border-radius: 16px;
@@ -688,7 +680,7 @@
         }
         /* --- WISH FORM & WISH DISPLAY STYLES --- */
         .wish-section {
-            background: #ffffff;
+            background: #faf5ea;
             border-radius: 20px;
             padding: 40px 30px;
             box-shadow: 0 10px 35px rgba(0,0,0,0.05);
@@ -711,17 +703,17 @@
         .wish-input {
             width: 100%;
             padding: 14px 18px;
-            border: 1.5px solid #e2e8f0;
+            border: 1.5px solid #dcd3be;
             border-radius: 12px;
             font-size: 0.95rem;
             outline: none;
-            background-color: #fafafa;
+            background-color: #f4ece0;
             transition: all 0.25s ease;
             color: #333;
         }
         .wish-input:focus {
             border-color: #f36f21;
-            background-color: #ffffff;
+            background-color: #faf5ea;
             box-shadow: 0 0 0 4px rgba(243, 111, 33, 0.1);
         }
         .wish-textarea {
@@ -758,7 +750,7 @@
             gap: 12px;
         }
         .wish-item {
-            background: #fff8f5;
+            background: #f4ece0;
             border-left: 4px solid #D32F2F;
             padding: 15px;
             border-radius: 8px;
@@ -797,7 +789,7 @@
         }
         /* --- REFERENCES SECTION --- */
         .references-section {
-            background: #ffffff;
+            background: #faf5ea;
             border-radius: 16px;
             padding: 35px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.05);
@@ -815,8 +807,8 @@
             box-sizing: border-box;
         }
         .ref-card {
-            background: #fafafa;
-            border: 1px solid #eaeaea;
+            background: #f4ece0;
+            border: 1px solid #e2d5bd;
             border-radius: 10px;
             padding: 14px 16px;
             display: flex;
@@ -891,7 +883,7 @@
             visibility: visible;
         }
         .modal-box {
-            background: #ffffff;
+            background: #faf5ea;
             padding: 30px 25px;
             border-radius: 16px;
             text-align: center;
@@ -991,7 +983,6 @@
             </ul>
         </nav>
     </header>
-
     <!-- Hero Section với Video YouTube làm nền động -->
     <section class="hero">
         <!-- Nhúng video YouTube làm nền động -->
@@ -1004,7 +995,6 @@
                 allowfullscreen>
             </iframe>
         </div>
-
         <div class="hero-content">
             <span class="hero-badge">MÙA THU ĐỘC LẬP</span>
             <h1>NGÀY QUỐC KHÁNH NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h1>
@@ -1031,7 +1021,6 @@
             </div>
         </div>
     </section>
-
     <!-- Main Container -->
     <main class="container">
         <!-- Thống kê con số lịch sử -->
